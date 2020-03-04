@@ -293,4 +293,5 @@ public class MainActivity extends AppCompatActivity {
         bpants.part_of_set(3);
 
     }//Перечень Брони
+    //ппкп
 }
