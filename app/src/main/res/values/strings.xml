@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Project</string>
+    <string name="Кузня">Кузня</string>
+    <string name="Дом">дом</string>
+    <string name="QuestGiver">квестгивер</string>
+    <string name="Vendor">торговец</string>
 </resources>
