@@ -1,15 +1,22 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button vendButton = (Button) findViewById(R.id.vendorButton);
+        vendButton.setOnClickListener(this);
     }
     {
         Weapon saber = new Weapon();
@@ -117,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         hummer.set_max_durability(100);
         hummer.set_weight(4);
 
-        Weapon club =new Weapon();
+        Weapon club = new Weapon();
         club.set_name("Training Club");
         club.set_damage_type("Crushing");
         club.set_base_damage(50);
@@ -166,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         excalibur.set_max_durability(100);
         excalibur.set_weight(4);
     } //Перечень оружия
+
     {
         Monster goblin = new Monster();
         goblin.set_name("Dirty Goblin");
@@ -192,100 +200,101 @@ public class MainActivity extends AppCompatActivity {
         giant_rat.monster_type("Giant");
         giant_rat.set_HP(50);
 
-        Monster zombie=new Monster();
+        Monster zombie = new Monster();
         zombie.set_name("Braineater");
         zombie.monster_type("Soldier");
         zombie.set_HP(50);
 
-        Monster ghost=new Monster();
+        Monster ghost = new Monster();
         ghost.set_name("Lost Soul");
         ghost.monster_type("Mystic");
         ghost.set_HP(50);
 
-        Monster flesh_golem=new Monster();
+        Monster flesh_golem = new Monster();
         flesh_golem.set_name("Flesh Golem");
         zombie.monster_type("Giant");
         zombie.set_HP(50);
     } //Перечень Монстров
+
     {
-        Armor lh=new Armor();
+        Armor lh = new Armor();
         lh.set_name("Leather Helmet");
         lh.set_material("Leather");
         lh.set_max_durable(50);
         lh.set_weight(5);
         lh.part_of_set(1);
 
-        Armor lc=new Armor();
+        Armor lc = new Armor();
         lc.set_name("Leather Cuirass");
         lc.set_material("Leather");
         lc.set_max_durable(50);
         lc.set_weight(5);
         lc.part_of_set(2);
 
-        Armor lp=new Armor();
+        Armor lp = new Armor();
         lp.set_name("Leather Pants");
         lp.set_material("Leather");
         lp.set_max_durable(50);
         lp.set_weight(5);
         lp.part_of_set(3);
 
-        Armor ih=new Armor();
+        Armor ih = new Armor();
         ih.set_name("Iron Helmet");
         ih.set_material("Iron");
         ih.set_max_durable(50);
         ih.set_weight(5);
         ih.part_of_set(1);
 
-        Armor ic=new Armor();
+        Armor ic = new Armor();
         ic.set_name("Iron Cuirass");
         ic.set_material("Iron");
         ic.set_max_durable(50);
         ic.set_weight(5);
         ic.part_of_set(2);
 
-        Armor ip=new Armor();
+        Armor ip = new Armor();
         ip.set_name("Iron Pants");
         ip.set_material("Iron");
         ip.set_max_durable(50);
         ip.set_weight(5);
         ip.part_of_set(3);
 
-        Armor mh=new Armor();
+        Armor mh = new Armor();
         mh.set_name("Magic Hat");
         mh.set_material("Essence");
         mh.set_max_durable(50);
         mh.set_weight(5);
         mh.part_of_set(1);
 
-        Armor mc=new Armor();
+        Armor mc = new Armor();
         mc.set_name("Magic Cape");
         mc.set_material("Essence");
         mc.set_max_durable(50);
         mc.set_weight(5);
         mc.part_of_set(2);
 
-        Armor mm=new Armor();
+        Armor mm = new Armor();
         mm.set_name("Magic Mantle");
         mm.set_material("Essence");
         mm.set_max_durable(50);
         mm.set_weight(5);
         mm.part_of_set(3);
 
-        Armor bh=new Armor();
+        Armor bh = new Armor();
         bh.set_name("Bone Helmet");
         bh.set_material("Bone");
         bh.set_max_durable(50);
         bh.set_weight(5);
         bh.part_of_set(1);
 
-        Armor bp=new Armor();
+        Armor bp = new Armor();
         bp.set_name("Bone Platemail");
         bp.set_material("Bone");
         bp.set_max_durable(50);
         bp.set_weight(5);
         bp.part_of_set(2);
 
-        Armor bpants=new Armor();
+        Armor bpants = new Armor();
         bpants.set_name("Bone Pants");
         bpants.set_material("Bone");
         bpants.set_max_durable(50);
@@ -293,5 +302,16 @@ public class MainActivity extends AppCompatActivity {
         bpants.part_of_set(3);
 
     }//Перечень Брони
-    //ппкп
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.vendorButton:
+                Intent intent = new Intent(this, VendorActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
 }
