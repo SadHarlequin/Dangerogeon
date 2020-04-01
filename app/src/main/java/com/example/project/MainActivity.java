@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -15,8 +13,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button forestButton = (Button) findViewById(R.id.forestButton);
+        forestButton.setOnClickListener(this);
         Button vendButton = (Button) findViewById(R.id.vendorButton);
         vendButton.setOnClickListener(this);
+
+        Button honeButton = (Button) findViewById(R.id.homeButton);
+        honeButton.setOnClickListener(this);
     }
     {
         Weapon saber = new Weapon();
@@ -306,6 +309,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+
+            case R.id.forestButton:
+                Intent intent1 = new Intent(this, FightActivity.class);
+                startActivity(intent1);
+                break;
             case R.id.vendorButton:
                 Intent intent = new Intent(this, VendorActivity.class);
                 startActivity(intent);
@@ -314,4 +322,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }

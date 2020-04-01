@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/homeButton"
         android:layout_width="83dp"
         android:layout_height="78dp"
         android:layout_marginStart="204dp"
