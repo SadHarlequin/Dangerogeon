@@ -5,6 +5,7 @@
     <string name="QuestGiver">квестгивер</string>
     <string name="Vendor">торговец</string>
     <string name="title_activity_vendor">VendorActivity</string>
+    <string name="title_fight_area">FightActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

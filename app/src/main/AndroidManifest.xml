@@ -13,6 +13,10 @@
             android:name=".VendorActivity"
             android:label="@string/title_activity_vendor"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FightActivity"
+            android:label="@string/title_fight_area"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
