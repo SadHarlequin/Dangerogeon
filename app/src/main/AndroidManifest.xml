@@ -17,6 +17,10 @@
             android:name=".FightActivity"
             android:label="@string/title_fight_area"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PrepareActivity"
+            android:label="@string/title_activity_prepare"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

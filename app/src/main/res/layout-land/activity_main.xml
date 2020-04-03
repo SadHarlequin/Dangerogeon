@@ -109,8 +109,8 @@
         android:id="@+id/button9"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="689dp"
-        android:layout_marginBottom="375dp"
+        android:layout_marginStart="636dp"
+        android:layout_marginBottom="368dp"
         android:background="@drawable/settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

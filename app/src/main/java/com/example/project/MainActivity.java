@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
 
             case R.id.forestButton:
-                Intent intent1 = new Intent(this, FightActivity.class);
+                Intent intent1 = new Intent(this, PrepareActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.vendorButton:
