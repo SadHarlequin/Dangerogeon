@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ghost.set_HP(50);
 
         Monster flesh_golem = new Monster();
-        flesh_golem.set_name("Flesh Golem");
+        flesh_golem.set_name("Flesh golem");
         zombie.monster_type("Giant");
         zombie.set_HP(50);
     } //Перечень Монстров
