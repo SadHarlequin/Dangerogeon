@@ -8,7 +8,10 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static java.lang.Math.random;
+
 public class PrepareActivity extends AppCompatActivity implements View.OnClickListener {
+    int numOfRooms =(int)(random()*6)+4;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
 
             case R.id.startButton:
                 Intent intentStart = new Intent(this, FightActivity.class);
+                intentStart.putExtra("numOfRooms",numOfRooms);
                 startActivity(intentStart);
                 break;
             default:
