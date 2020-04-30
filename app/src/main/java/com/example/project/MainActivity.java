@@ -177,47 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         excalibur.set_weight(4);
     } //Перечень оружия
 
-    {
-        Monster goblin = new Monster();
-        goblin.set_name("Dirty Goblin");
-        goblin.monster_type("Soldier");
-        goblin.set_HP(50);
 
-        Monster skeleton_warrior = new Monster();
-        skeleton_warrior.set_name("Skeleton");
-        skeleton_warrior.monster_type("Skeleton");
-        skeleton_warrior.set_HP(50);
-
-        Monster skeleton_archer = new Monster();
-        skeleton_archer.set_name("Skinny Sniper");
-        skeleton_archer.monster_type("Skeleton");
-        skeleton_archer.set_HP(50);
-
-        Monster child_dragon = new Monster();
-        child_dragon.set_name("Cute Flamethrower");
-        child_dragon.monster_type("Magic Pet");
-        child_dragon.set_HP(50);
-
-        Monster giant_rat = new Monster();
-        giant_rat.set_name("Plague Carrier");
-        giant_rat.monster_type("Giant");
-        giant_rat.set_HP(50);
-
-        Monster zombie = new Monster();
-        zombie.set_name("Braineater");
-        zombie.monster_type("Soldier");
-        zombie.set_HP(50);
-
-        Monster ghost = new Monster();
-        ghost.set_name("Lost Soul");
-        ghost.monster_type("Mystic");
-        ghost.set_HP(50);
-
-        Monster flesh_golem = new Monster();
-        flesh_golem.set_name("Flesh golem");
-        zombie.monster_type("Giant");
-        zombie.set_HP(50);
-    } //Перечень Монстров
 
     {
         Armor lh = new Armor();

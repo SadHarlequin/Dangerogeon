@@ -4,13 +4,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:background="@drawable/forest_background"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
     <ImageButton
             android:id="@+id/hero_pos_4"
-            android:layout_width="75dp"
-
+            android:layout_width="105dp"
+            android:background="@drawable/hero"
             android:layout_height="135dp"
             android:layout_marginStart="255dp"
             android:layout_marginBottom="50dp"
@@ -47,7 +48,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
+    <ImageButton
             android:id="@+id/enemy_pos_4"
             android:layout_width="75dp"
             android:layout_height="135dp"
@@ -81,6 +82,7 @@
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_marginStart="580dp"
+            android:background="@drawable/arrow"
             android:layout_marginBottom="190dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
