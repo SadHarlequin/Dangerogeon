@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/forest_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+
+    <Button
+            android:id="@+id/hero_pos_4"
+            android:layout_width="75dp"
+            android:layout_height="135dp"
+            android:layout_marginStart="255dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+            android:id="@+id/treasure_pos"
+            android:layout_width="75dp"
+            android:layout_height="135dp"
+            android:layout_marginStart="368dp"
+            android:layout_marginBottom="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+            android:id="@+id/inventory"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="330dp"
+            android:background="@drawable/inventory_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+            android:id="@+id/attackChoiceButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="330dp"
+            android:background="@drawable/weapon_inventory_fight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+            android:id="@+id/next_room"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="600dp"
+            android:layout_marginBottom="190dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,9 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         forestButton.setOnClickListener(this);
         Button vendButton = (Button) findViewById(R.id.vendorButton);
         vendButton.setOnClickListener(this);
-
-        Button honeButton = (Button) findViewById(R.id.homeButton);
-        honeButton.setOnClickListener(this);
+        Button homeButton = (Button) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(this);
     }
     {
         Weapon saber = new Weapon();
@@ -176,7 +175,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         excalibur.set_max_durability(100);
         excalibur.set_weight(4);
     } //Перечень оружия
-
 
 
     {

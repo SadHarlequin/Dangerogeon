@@ -28,9 +28,15 @@ public class Monster {
         this.monsterHP-=damage;
     }
 
-    void setName(String n){
+    void setMonsterName(String n){
         this.monsterName=n;
     }
+
+    String getMonsterName (){return monsterName;}
+
+    String getInfo(){
+        if (monsterHP<=0) return "";
+        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP;}
 
     void setHP(int n){
         this.monsterHP=n;
