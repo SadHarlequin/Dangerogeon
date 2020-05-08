@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import static java.lang.Math.random;
 
 
 public class FightActivity extends AppCompatActivity implements View.OnClickListener {
@@ -88,7 +87,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 queue4 = (ImageView)findViewById(R.id.queue4);
                 queue5 = (ImageView)findViewById(R.id.queue5);
                 queueCreation();
-                //enemyAttack();      нужна много поточность, один поток не выдерживает
+                enemyAttack();      //нужна много поточность, один поток не выдерживает
 
                 break;
             case 2:
@@ -219,21 +218,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         queue5.setImageResource(queue_pos_5.getMonsterView());
     }
 
-//    void enemyAttack(){
-//        while (queue_pos_1!=hero){
-//            enemy1_image.setClickable(false);
-//            enemy2_image.setClickable(false);
-//            enemy3_image.setClickable(false);
-//            enemy4_image.setClickable(false);
-//            hero.getDamage(queue_pos_1.getAttack());
-//            heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
-//            queueSwap();
-//        }
-//        enemy1_image.setClickable(true);
-//        enemy2_image.setClickable(true);
-//        enemy3_image.setClickable(true);
-//        enemy4_image.setClickable(true);
-//    }
+    void enemyAttack(){
+        if (queue_pos_1!=hero){
+            hero.getDamage(queue_pos_1.getAttack());
+            heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
+            queueSwap();
+        }
+    }
 
     void heroAttack(Monster enemy){
         if (enemy.getMonsterHP()>0){
@@ -278,23 +269,19 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             break;
         case R.id.enemy_pos_1:
             heroAttack(enemy1);
-//            enemyDeath();
-            //enemyAttack();
+            enemyAttack();
             break;
         case R.id.enemy_pos_2:
             heroAttack(enemy2);
-//            enemyDeath();
-            //enemyAttack();
+            enemyAttack();
             break;
         case R.id.enemy_pos_3:
             heroAttack(enemy3);
-//            enemyDeath();
-            //enemyAttack();
+            enemyAttack();
             break;
         case R.id.enemy_pos_4:
             heroAttack(enemy4);
-//            enemyDeath();
-            //enemyAttack();
+            enemyAttack();
             break;
         default:
             break;
