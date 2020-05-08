@@ -102,10 +102,10 @@ public class Monster {
 
     }
    /* {
-        Monster goblin = new Monster();
-        goblin.set_name("Dirty Goblin");
-        goblin.monster_type("Soldier");
-        goblin.set_HP(50);
+        Monster goblin_01 = new Monster();
+        goblin_01.set_name("Dirty Goblin");
+        goblin_01.monster_type("Soldier");
+        goblin_01.set_HP(50);
 
         Monster skeleton_warrior = new Monster();
         skeleton_warrior.set_name("Skeleton");

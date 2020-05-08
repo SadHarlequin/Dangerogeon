@@ -1,10 +1,8 @@
 package com.example.project;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -101,15 +99,15 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     void squadCreation(int monsterChoice){
         switch (monsterChoice){
             case 1:
-                enemy1=new Monster("Goblin",50, R.drawable.goblin,10);
+                enemy1=new Monster("Goblin",50, R.drawable.goblin_01,10);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setImageResource(enemy1.getMonsterView());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin,10);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,10);
                 enemy2.monsterType("Soldier");
                 enemy2_image.setImageResource(enemy2.getMonsterView());
 
-                enemy3=new Monster("Goblin",50, R.drawable.goblin,10);
+                enemy3=new Monster("Goblin",50, R.drawable.goblin_03,10);
                 enemy3.monsterType("Soldier");
                 enemy3_image.setImageResource(enemy3.getMonsterView());
 
@@ -118,13 +116,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy4_image.setImageResource(enemy4.getMonsterView());
                 break;
             case 2:
-                enemy1=new Monster("Goblin",50,R.drawable.goblin,10);
+                enemy1=new Monster("Goblin",50,R.drawable.goblin_03,10);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setImageResource(enemy1.getMonsterView());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin,10);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,10);
                 enemy2.monsterType("Soldier");
-                enemy2_image.setImageResource(R.drawable.goblin);
+                enemy2_image.setImageResource(R.drawable.goblin_01);
 
                 enemy3=new Monster("Golem",100, R.drawable.golem,20);
                 enemy3.monsterType("Giant");
