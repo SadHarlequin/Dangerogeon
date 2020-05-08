@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static java.lang.Math.random;
+//import static java.lang.Math.random;
 
 
 public class FightActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,15 +30,34 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     TextView enemyInfo2;
     TextView enemyInfo3;
     TextView enemyInfo4;
+    TextView heroInfo;
+    ImageView queue1;
+    ImageView queue2;
+    ImageView queue3;
+    ImageView queue4;
+    ImageView queue5;
+    Hero hero=new Hero();
+    Monster queue_pos_1;
+    Monster queue_pos_2;
+    Monster queue_pos_3;
+    Monster queue_pos_4;
+    Monster queue_pos_5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         numOfRooms=getIntent().getIntExtra("numOfRooms",0)-1;
-        roomChoice=(int)(random()*2)+1;
+        roomChoice=(int)(Math.random()*2)+1;
+
+        hero.setHP(getIntent().getIntExtra("heroHP",0));
+        hero.setMonsterSpeed(getIntent().getIntExtra("heroSpeed",0));
+        hero.setHeroMaxHp(200);
+        hero.setMonsterView(R.drawable.hero);
+
         super.onCreate(savedInstanceState);
         switch (roomChoice){
             case 1:
-                monsterChoice=(int)(random()*2)+1;
+                monsterChoice=(int)(Math.random()*2)+1;
                 setContentView(R.layout.fight_area);
                 nextRoom=(ImageButton)findViewById(R.id.next_room);
                 nextRoom.setOnClickListener(this);
@@ -56,10 +76,20 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemyInfo2 = (TextView) findViewById(R.id.enemyText2);
                 enemyInfo3 = (TextView) findViewById(R.id.enemyText3);
                 enemyInfo4 = (TextView) findViewById(R.id.enemyText4);
+                heroInfo=(TextView) findViewById(R.id.heroText) ;
                 enemyInfo1.setText(enemy1.getInfo());
                 enemyInfo2.setText(enemy2.getInfo());
                 enemyInfo3.setText(enemy3.getInfo());
                 enemyInfo4.setText(enemy4.getInfo());
+                heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
+                queue1 = (ImageView)findViewById(R.id.queue1);
+                queue2 = (ImageView)findViewById(R.id.queue2);
+                queue3 = (ImageView)findViewById(R.id.queue3);
+                queue4 = (ImageView)findViewById(R.id.queue4);
+                queue5 = (ImageView)findViewById(R.id.queue5);
+                queueCreation();
+                //enemyAttack();      нужна много поточность, один поток не выдерживает
+
                 break;
             case 2:
                 setContentView(R.layout.treasure_activity);
@@ -72,36 +102,37 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     void squadCreation(int monsterChoice){
         switch (monsterChoice){
             case 1:
-                enemy1=new Monster("Goblin",50, R.drawable.goblin);
+                enemy1=new Monster("Goblin",50, R.drawable.goblin,10);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setImageResource(enemy1.getMonsterView());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin,10);
                 enemy2.monsterType("Soldier");
                 enemy2_image.setImageResource(enemy2.getMonsterView());
 
-                enemy3=new Monster("Goblin",50, R.drawable.goblin);
+                enemy3=new Monster("Goblin",50, R.drawable.goblin,10);
                 enemy3.monsterType("Soldier");
                 enemy3_image.setImageResource(enemy3.getMonsterView());
 
-                enemy4=new Monster("Golem",100, R.drawable.golem);
+                enemy4=new Monster("Golem",100, R.drawable.golem,20);
                 enemy4.monsterType("Giant");
                 enemy4_image.setImageResource(enemy4.getMonsterView());
                 break;
             case 2:
-                enemy1=new Monster("Goblin",50,R.drawable.goblin);
+                enemy1=new Monster("Goblin",50,R.drawable.goblin,10);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setImageResource(enemy1.getMonsterView());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin,10);
                 enemy2.monsterType("Soldier");
                 enemy2_image.setImageResource(R.drawable.goblin);
 
-                enemy3=new Monster("Golem",100, R.drawable.golem);
+                enemy3=new Monster("Golem",100, R.drawable.golem,20);
                 enemy3.monsterType("Giant");
                 enemy3_image.setImageResource(enemy3.getMonsterView());
 
-                enemy4=new Monster("",-9999, R.drawable.free_space);
+                enemy4=new Monster("",-9999, R.drawable.free_space,0);
+                enemy4.setMonsterSpeed(0);
                 break;
             default:
                 break;
@@ -149,6 +180,85 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    void queueCreation (){
+        queue_pos_1=hero;
+        queue_pos_2=enemy1;
+        queue_pos_3=enemy2;
+        queue_pos_4=enemy3;
+        queue_pos_5=enemy4;
+        Monster temp;
+        boolean swapped=true;
+        while(swapped==true){
+        if (queue_pos_1.getMonsterSpeed()<queue_pos_2.getMonsterSpeed()){
+            temp=queue_pos_1;
+            queue_pos_1=queue_pos_2;
+            queue_pos_2=temp;
+            }
+        else if (queue_pos_2.getMonsterSpeed()<queue_pos_3.getMonsterSpeed()){
+            temp=queue_pos_2;
+            queue_pos_2=queue_pos_3;
+            queue_pos_3=temp;
+            }
+        else if (queue_pos_3.getMonsterSpeed()<queue_pos_4.getMonsterSpeed()){
+            temp=queue_pos_3;
+            queue_pos_3=queue_pos_4;
+            queue_pos_4=temp;
+            }
+        else if (queue_pos_4.getMonsterSpeed()<queue_pos_5.getMonsterSpeed()){
+            temp=queue_pos_4;
+            queue_pos_4=queue_pos_5;
+            queue_pos_5=temp;
+            }
+        else
+            swapped=false;
+        }
+        queue1.setImageResource(queue_pos_1.getMonsterView());
+        queue2.setImageResource(queue_pos_2.getMonsterView());
+        queue3.setImageResource(queue_pos_3.getMonsterView());
+        queue4.setImageResource(queue_pos_4.getMonsterView());
+        queue5.setImageResource(queue_pos_5.getMonsterView());
+    }
+
+//    void enemyAttack(){
+//        while (queue_pos_1!=hero){
+//            enemy1_image.setClickable(false);
+//            enemy2_image.setClickable(false);
+//            enemy3_image.setClickable(false);
+//            enemy4_image.setClickable(false);
+//            hero.getDamage(queue_pos_1.getAttack());
+//            heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
+//            queueSwap();
+//        }
+//        enemy1_image.setClickable(true);
+//        enemy2_image.setClickable(true);
+//        enemy3_image.setClickable(true);
+//        enemy4_image.setClickable(true);
+//    }
+
+    void heroAttack(Monster enemy){
+        if (enemy.getMonsterHP()>0){
+            enemy.getDamage(50);
+            enemyDeath();
+            queueSwap();
+        }
+    }
+
+    void queueSwap(){
+        Monster temp=queue_pos_1;
+        queue_pos_1=queue_pos_2;
+        queue_pos_2=queue_pos_3;
+        queue_pos_3=queue_pos_4;
+        queue_pos_4=queue_pos_5;
+        queue_pos_5=temp;
+        queue1.setImageResource(queue_pos_1.getMonsterView());
+        queue2.setImageResource(queue_pos_2.getMonsterView());
+        queue3.setImageResource(queue_pos_3.getMonsterView());
+        queue4.setImageResource(queue_pos_4.getMonsterView());
+        queue5.setImageResource(queue_pos_5.getMonsterView());
+    }
+
+
+
 
     @Override
     public void onClick(View v) {
@@ -161,24 +271,30 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             else {
                 Intent fight_intent = new Intent(this, FightActivity.class);
                 fight_intent.putExtra("numOfRooms", numOfRooms);
+                fight_intent.putExtra("heroHP", hero.getMonsterHP());
+                fight_intent.putExtra("heroSpeed", hero.getMonsterSpeed());
                 startActivity(fight_intent);
             }
             break;
         case R.id.enemy_pos_1:
-            enemy1.getDamage(50);
-            enemyDeath();
+            heroAttack(enemy1);
+//            enemyDeath();
+            //enemyAttack();
             break;
         case R.id.enemy_pos_2:
-            enemy2.getDamage(50);
-            enemyDeath();
+            heroAttack(enemy2);
+//            enemyDeath();
+            //enemyAttack();
             break;
         case R.id.enemy_pos_3:
-            enemy3.getDamage(50);
-            enemyDeath();
+            heroAttack(enemy3);
+//            enemyDeath();
+            //enemyAttack();
             break;
         case R.id.enemy_pos_4:
-            enemy4.getDamage(50);
-            enemyDeath();
+            heroAttack(enemy4);
+//            enemyDeath();
+            //enemyAttack();
             break;
         default:
             break;

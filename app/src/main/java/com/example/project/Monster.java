@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.graphics.drawable.Drawable;
 
+
 public class Monster {
     String monsterName;
     int monsterHP;
@@ -9,16 +10,41 @@ public class Monster {
     String monsterWeakness;
     String monsterStrong;
     int monsterView;
+    int monsterSpeed;
+    int attack;
 
-    Monster(String monsterName, int monsterMaxHP, int monsterView){
+    void setAttack(int power){this.attack=power; }
+
+    int getAttack(){return attack;}
+
+    Monster(String monsterName, int monsterMaxHP, int monsterView, int attack){
         this.monsterMaxHP = monsterMaxHP;
         this.monsterHP = monsterMaxHP;
         this.monsterName = monsterName;
         this.monsterView = monsterView;
+        this.attack=attack;
+//        this.monsterSpeed=monsterSpeed;
     }
+
+    public Monster(int monsterMaxHP, int monsterSpeed) {
+        this.monsterSpeed=monsterSpeed;
+        this.monsterMaxHP=monsterMaxHP;
+        this.monsterHP=monsterMaxHP;
+    }
+
+    public Monster() {
+    }
+
     void setMonsterView(int monsterView){
         this.monsterView = monsterView;
     }
+
+    void setMonsterSpeed(int monsterSpeed){this.monsterSpeed=monsterSpeed;}
+
+    int getMonsterSpeed(){return monsterSpeed;}
+
+    int getMonsterMaxHP(){return monsterMaxHP;}
+
 
     int getMonsterView(){
         return monsterView;
@@ -36,7 +62,7 @@ public class Monster {
 
     String getInfo(){
         if (monsterHP<=0) return "";
-        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP;}
+        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP+"\n"+monsterSpeed;}
 
     void setHP(int n){
         this.monsterHP=n;
@@ -51,20 +77,25 @@ public class Monster {
             case ("Soldier"):
                 this.monsterStrong="One-handed";
                 this.monsterWeakness="Two-handed";
+                this.monsterSpeed=(int)(Math.random()*4)+2;
                 break;
             case("Skeleton"):
                 this.monsterStrong="Pierce";
                 this.monsterWeakness="Crushing";
+                this.monsterSpeed=(int)(Math.random()*3)+1;
                 break;
             case("Magic Pet"):
                 this.monsterStrong="Magic";
                 this.monsterWeakness="One-handed";
+                this.monsterSpeed=(int)(Math.random()*6)+2;
             case("Giant"):
                 this.monsterStrong="Crushing";
                 this.monsterWeakness="Pierce";
+                this.monsterSpeed=(int)(Math.random());
             case("Mystic"):
                 this.monsterStrong="Two-handed";
                 this.monsterWeakness="Magic";
+                this.monsterSpeed=(int)(Math.random()*5)+3;
             default:
                 break;
         }
