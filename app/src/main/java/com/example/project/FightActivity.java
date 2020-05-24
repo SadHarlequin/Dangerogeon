@@ -1,6 +1,8 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -46,6 +48,12 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     Monster queue_pos_3;
     Monster queue_pos_4;
     Monster queue_pos_5;
+    //анимации персонажей
+    AnimationDrawable hero_animation;
+    AnimationDrawable enemy1_animation;
+    AnimationDrawable enemy2_animation;
+    AnimationDrawable enemy3_animation;
+    AnimationDrawable enemy4_animation;
     //попытка в приостановку времени
     Handler handler;
     //Intent in_intent =  getIntent();
@@ -61,6 +69,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         hero.setHeroMaxHp(200);
         hero.setAttack(50);
         hero.setMonsterView(R.drawable.hero);
+        //hero_animation
 
         super.onCreate(savedInstanceState);
         switch (roomChoice){
@@ -71,13 +80,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 nextRoom.setOnClickListener(this);
                 nextRoom.setVisibility(View.INVISIBLE);
                 nextRoom.setClickable(false);
-                enemy1_image = (ImageButton)findViewById(R.id.enemy_pos_1);
+                enemy1_image = findViewById(R.id.enemy_pos_1);
                 enemy1_image.setOnClickListener(this);
-                enemy2_image = (ImageButton)findViewById(R.id.enemy_pos_2);
+                enemy2_image = findViewById(R.id.enemy_pos_2);
                 enemy2_image.setOnClickListener(this);
-                enemy3_image = (ImageButton)findViewById(R.id.enemy_pos_3);
+                enemy3_image = findViewById(R.id.enemy_pos_3);
                 enemy3_image.setOnClickListener(this);
-                enemy4_image = (ImageButton)findViewById(R.id.enemy_pos_4);
+                enemy4_image = findViewById(R.id.enemy_pos_4);
                 enemy4_image.setOnClickListener(this);
                 squadCreation(monsterChoice);
                 enemyInfo1 = (TextView) findViewById(R.id.enemyText1);
@@ -96,6 +105,14 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 queue4 = (ImageView)findViewById(R.id.queue4);
                 queue5 = (ImageView)findViewById(R.id.queue5);
                 queueCreation();
+                enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
+                enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
+                enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
+                enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
+                enemy1_animation.start();
+                enemy2_animation.start();
+                enemy3_animation.start();
+                enemy4_animation.start();
                 enemyAttack();
 
                 break;
@@ -111,37 +128,38 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     void squadCreation(int monsterChoice){
         switch (monsterChoice){
             case 1:
-                enemy1=new Monster("Goblin",50, R.drawable.goblin_01,5);
+                enemy1=new Monster("Goblin",50, R.drawable.goblin_01,R.drawable.goblin_02_wait,5);
                 enemy1.monsterType("Soldier");
-                enemy1_image.setImageResource(enemy1.getMonsterView());
+                enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,5);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,R.drawable.goblin_02_wait,5);
                 enemy2.monsterType("Soldier");
-                enemy2_image.setImageResource(enemy2.getMonsterView());
+                enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
 
-                enemy3=new Monster("Goblin",50, R.drawable.goblin_03,5);
+                enemy3=new Monster("Goblin",50, R.drawable.goblin_03,R.drawable.goblin_02_wait,5);
                 enemy3.monsterType("Soldier");
-                enemy3_image.setImageResource(enemy3.getMonsterView());
+                enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4=new Monster("Golem",100, R.drawable.golem,10);
+                enemy4=new Monster("Golem",100, R.drawable.golem,R.drawable.goblin_02_wait,10);
                 enemy4.monsterType("Giant");
-                enemy4_image.setImageResource(enemy4.getMonsterView());
+                enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
                 break;
             case 2:
-                enemy1=new Monster("Goblin",50,R.drawable.goblin_03,5);
+                enemy1=new Monster("Goblin",50,R.drawable.goblin_03,R.drawable.goblin_02_wait,5);
                 enemy1.monsterType("Soldier");
-                enemy1_image.setImageResource(enemy1.getMonsterView());
+                enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
 
-                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,5);
+                enemy2=new Monster("Goblin",50, R.drawable.goblin_02,R.drawable.goblin_02_wait,5);
                 enemy2.monsterType("Soldier");
-                enemy2_image.setImageResource(R.drawable.goblin_01);
+                enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
 
-                enemy3=new Monster("Golem",100, R.drawable.golem,10);
+                enemy3=new Monster("Golem",100, R.drawable.golem,R.drawable.goblin_02_wait,10);
                 enemy3.monsterType("Giant");
-                enemy3_image.setImageResource(enemy3.getMonsterView());
+                enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4=new Monster("",-9999, R.drawable.free_space,0);
+                enemy4=new Monster("",-9999, R.drawable.free_space,R.drawable.goblin_02_wait,0);
                 enemy4.setMonsterSpeed(0);
+                enemy4_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
                 break;
             default:
                 break;
@@ -260,9 +278,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             if (queue_pos_1.getMonsterView()!=R.drawable.grave){
                 audioPlayer.play((int)(Math.random()*2)==0?audioPlayer.goblin_attack1ID:
                     audioPlayer.goblin_attack2ID);
-                try {
-                    Thread.sleep(500); //Приостанавливает поток на 1 секунду
-                } catch (Exception e) { }
+//                try {
+//                    Thread.sleep(500); //Приостанавливает поток на 1 секунду
+//                } catch (Exception e) { }
             }
             hero.getDamage(queue_pos_1.getAttack());
             heroInfo.setText(hero.getHeroInfo());
@@ -276,6 +294,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int)(Math.random()*3);
             audioPlayer.play(roll==0?audioPlayer.attack1ID:
                     (roll==2?audioPlayer.attack2ID:audioPlayer.attack3ID));
+            if (enemy == enemy1)
+                enemy1_image.setImageResource(R.drawable.goblin_02_hurt);
+                enemy1_animation.start();
+                enemy1_image.setImageResource(enemy1.getMonsterView());
+
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
             enemyDeath();

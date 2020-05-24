@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.widget.ImageView;
 
 
 public class Monster {
@@ -11,6 +12,7 @@ public class Monster {
     String monsterWeakness;
     String monsterStrong;
     int monsterView;
+    int monsterAnimationWait;
     int monsterSpeed;
     int attack;
 
@@ -18,13 +20,21 @@ public class Monster {
 
     int getAttack(){return attack;}
 
+    Monster(String monsterName, int monsterMaxHP, int monsterView,int monsterAnimationWait, int attack){
+        this.monsterMaxHP = monsterMaxHP;
+        this.monsterHP = monsterMaxHP;
+        this.monsterName = monsterName;
+        this.monsterView = monsterView;
+        this.attack=attack;
+        this.monsterAnimationWait=monsterAnimationWait;
+    }
+
     Monster(String monsterName, int monsterMaxHP, int monsterView, int attack){
         this.monsterMaxHP = monsterMaxHP;
         this.monsterHP = monsterMaxHP;
         this.monsterName = monsterName;
         this.monsterView = monsterView;
         this.attack=attack;
-//        this.monsterSpeed=monsterSpeed;
     }
 
     public Monster(int monsterMaxHP, int monsterSpeed) {
@@ -46,6 +56,7 @@ public class Monster {
 
     int getMonsterMaxHP(){return monsterMaxHP;}
 
+    int getMonsterAnimationWait(){return monsterAnimationWait;}
 
     int getMonsterView(){
         return monsterView;
@@ -81,6 +92,16 @@ public class Monster {
         setMonsterView(R.drawable.grave);
         setAttack(0);
     }
+
+    void MonsterAttackAnimation(){
+        if(getMonsterView()==R.drawable.goblin_02){
+
+        }
+        if(getMonsterView()==R.drawable.golem){
+
+        }
+    }
+
 
 
     void monsterType(String n){

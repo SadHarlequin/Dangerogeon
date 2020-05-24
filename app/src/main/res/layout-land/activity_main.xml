@@ -30,7 +30,8 @@
             android:id="@+id/button4"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="квестгивер"
+
+            android:background="@drawable/questgiver"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.101"
