@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.project.MainActivity.audioPlayer;
 
 
 public class FightActivity extends AppCompatActivity implements View.OnClickListener {
@@ -39,13 +40,14 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     Monster queue_pos_3;
     Monster queue_pos_4;
     Monster queue_pos_5;
-
+    //Intent in_intent =  getIntent();
+    //SFXPlayer audioPlayer =(SFXPlayer)in_intent.getSerializableExtra("sfx");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         numOfRooms=getIntent().getIntExtra("numOfRooms",0)-1;
         roomChoice=(int)(Math.random()*2)+1;
-
         hero.setHP(getIntent().getIntExtra("heroHP",0));
         hero.setMonsterSpeed(getIntent().getIntExtra("heroSpeed",0));
         hero.setHeroMaxHp(200);
@@ -137,6 +139,8 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     }
 
     void enemyDeath() {
+        audioPlayer.play((int)(Math.random()*2)==0?audioPlayer.goblin_death_rattle1ID
+                :audioPlayer.goblin_death_rattle2ID);
         Monster swap;
         if (enemy1.getMonsterHP() <= 0) {
             enemy1.setMonsterView(R.drawable.grave);
@@ -218,6 +222,8 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     void enemyAttack(){
         if (queue_pos_1!=hero){
+            audioPlayer.play((int)(Math.random()*2)==0?audioPlayer.goblin_attack1ID:
+                    audioPlayer.goblin_attack2ID);
             hero.getDamage(queue_pos_1.getAttack());
             heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
             queueSwap();
@@ -226,7 +232,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     void heroAttack(Monster enemy){
         if (enemy.getMonsterHP()>0){
+            int roll = (int)(Math.random()*3);
+            audioPlayer.play(roll==0?audioPlayer.attack1ID:
+                    (roll==2?audioPlayer.attack2ID:audioPlayer.attack3ID));
             enemy.getDamage(50);
+            audioPlayer.play(audioPlayer.goblin_hitID);
             enemyDeath();
             queueSwap();
         }
@@ -253,7 +263,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
     switch (v.getId()){
         case R.id.next_room:
+            audioPlayer.play(audioPlayer.click_buttonID);
             if(numOfRooms==0){
+                audioPlayer.stopMusic();
                 Intent fight_intent = new Intent(this, MainActivity.class);
                 startActivity(fight_intent);
             }

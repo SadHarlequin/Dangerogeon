@@ -1,17 +1,24 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.HashMap;
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public static SFXPlayer audioPlayer = new SFXPlayer();
+    //audioPlayer.setContext(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        audioPlayer.startMusic(this, audioPlayer.main_themeID);
+        audioPlayer.loadSounds(this);
         super.onCreate(savedInstanceState);
+        //SFXPlayer.play(SFXPlayer.coinID,1,1,1);
         setContentView(R.layout.activity_main);
         Button forestButton = (Button) findViewById(R.id.forestButton);
         forestButton.setOnClickListener(this);
@@ -20,6 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
     }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        audioPlayer.startMusic(this, audioPlayer.main_themeID);
+    }
+
     {
         Weapon saber = new Weapon();
         saber.set_name("Old Pirate`s Saber");
@@ -266,15 +279,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        audioPlayer.play(audioPlayer.click_buttonID);
         switch (view.getId()) {
-
             case R.id.forestButton:
+                audioPlayer.stopMusic();
+                //audioPlayer.pause(audioPlayer.coinID);
                 Intent intent1 = new Intent(this, PrepareActivity.class);
+                //intent1.putExtra("sfx", audioPlayer);
+                audioPlayer.startMusic(this, audioPlayer.forest_themeID);
                 startActivity(intent1);
                 break;
             case R.id.vendorButton:
-                Intent intent = new Intent(this, VendorActivity.class);
-                startActivity(intent);
+                audioPlayer.stopMusic();
+                //audioPlayer.pause(audioPlayer.coinID);
+                Intent intent2 = new Intent(this, VendorActivity.class);
+                //intent2.putExtra("sfx", audioPlayer);
+                startActivity(intent2);
                 break;
             default:
                 break;

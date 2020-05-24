@@ -9,11 +9,15 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.project.MainActivity.audioPlayer;
 import static java.lang.Math.random;
 
 public class PrepareActivity extends AppCompatActivity implements View.OnClickListener {
     int numOfRooms =(int)(Math.random()*6)+4;
     Hero hero = new Hero(200, 5);
+    //Intent in_intent =  getIntent();
+    //SFXPlayer audioPlayer =(SFXPlayer)in_intent.getSerializableExtra("sfx");
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +29,9 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
-    public void onClick(View prepareViev) {
-        switch (prepareViev.getId()) {
+    public void onClick(View prepareView) {
+        audioPlayer.play(audioPlayer.click_buttonID);
+        switch (prepareView.getId()) {
             case R.id.BackButtonPrepare:
                 Intent intentBack = new Intent(this, MainActivity.class);
                 startActivity(intentBack);
@@ -37,6 +42,7 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
                 intentStart.putExtra("numOfRooms",numOfRooms);
                 intentStart.putExtra("heroHP", hero.getMonsterHP());
                 intentStart.putExtra("heroSpeed", hero.getMonsterSpeed());
+                //intentStart.putExtra("sfx", audioPlayer);
                 startActivity(intentStart);
                 break;
             default:

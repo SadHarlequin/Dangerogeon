@@ -12,7 +12,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import static com.example.project.MainActivity.audioPlayer;
+
 public class VendorActivity extends AppCompatActivity implements View.OnClickListener {
+    //Intent in_intent =  getIntent();
+    //SFXPlayer audioPlayer =(SFXPlayer)in_intent.getSerializableExtra("sfx");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class VendorActivity extends AppCompatActivity implements View.OnClickLis
         }
     @Override
     public void onClick(View vendorView) {
+        audioPlayer.play(audioPlayer.click_buttonID);
         switch (vendorView.getId()) {
             case R.id.BackButtonVendorMenu:
                 Intent intentVendor = new Intent(this, MainActivity.class);
