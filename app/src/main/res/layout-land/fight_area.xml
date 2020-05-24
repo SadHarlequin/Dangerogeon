@@ -9,6 +9,7 @@
         tools:context=".MainActivity">
 
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/hero_pos_4"
             android:layout_width="121dp"
             android:background="@drawable/hero"
@@ -19,6 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_1"
             android:background="@drawable/free_space"
             android:layout_width="105dp"
@@ -29,6 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_2"
             android:layout_width="105dp"
             android:background="@drawable/free_space"
@@ -38,6 +41,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_3"
             android:layout_width="105dp"
             android:background="@drawable/free_space"
@@ -84,6 +88,7 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.477" app:layout_constraintVertical_bias="0.09"/>
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_4"
             android:layout_width="105dp"
             android:layout_height="135dp"
@@ -93,6 +98,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
     <Button
+            android:soundEffectsEnabled="false"
             android:id="@+id/inventory"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -102,6 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
     <Button
+            android:soundEffectsEnabled="false"
             android:id="@+id/attackChoiceButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -112,6 +119,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageButton
+            android:soundEffectsEnabled="false"
             android:id="@+id/next_room"
             android:layout_width="100dp"
             android:layout_height="70dp"
