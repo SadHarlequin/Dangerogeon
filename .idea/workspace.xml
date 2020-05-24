@@ -12,6 +12,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="6af63294-c6b8-4eb0-80c5-e105f3ea42ab" name="Default Changelist" comment="">
     <list default="true" id="6af63294-c6b8-4eb0-80c5-e105f3ea42ab" name="Default Changelist" comment="свежайший апдейт с музыкой и звуками">
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/back_arrow.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/prepare.jpg" afterDir="false" />
@@ -54,6 +55,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1YefbGVnelOOwXvgJl6qYupmZeR" />
   <component name="ProjectViewState">
@@ -135,17 +137,55 @@
       <option name="presentableId" value="Default" />
       <updated>1583308049798</updated>
     </task>
+    <task id="LOCAL-00001" summary="свежайший апдейт с музыкой и звуками">
+      <created>1590303163331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590303163331</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
