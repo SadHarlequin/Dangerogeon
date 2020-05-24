@@ -58,6 +58,10 @@ public class Monster {
 
     int getMonsterAnimationWait(){return monsterAnimationWait;}
 
+    void setMonsterAnimationWait(int monsterAnimationWait){
+        this.monsterAnimationWait = monsterAnimationWait;
+    }
+
     int getMonsterView(){
         return monsterView;
     }
@@ -90,6 +94,7 @@ public class Monster {
         } catch (Exception e) {
         }
         setMonsterView(R.drawable.grave);
+        setMonsterAnimationWait(R.drawable.grave_img);
         setAttack(0);
     }
 
