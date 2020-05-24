@@ -88,14 +88,17 @@ public class Monster {
                 this.monsterStrong="Magic";
                 this.monsterWeakness="One-handed";
                 this.monsterSpeed=(int)(Math.random()*6)+2;
+                break;
             case("Giant"):
                 this.monsterStrong="Crushing";
                 this.monsterWeakness="Pierce";
-                this.monsterSpeed=(int)(Math.random());
+                this.monsterSpeed=(int)(Math.random())+1;
+                break;
             case("Mystic"):
                 this.monsterStrong="Two-handed";
                 this.monsterWeakness="Magic";
                 this.monsterSpeed=(int)(Math.random()*5)+3;
+                break;
             default:
                 break;
         }
