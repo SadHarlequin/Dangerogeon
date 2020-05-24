@@ -9,6 +9,16 @@
         tools:context=".MainActivity">
 
 
+    <ImageView
+            android:layout_width="159dp"
+            android:layout_height="116dp"
+
+            android:id="@+id/wooden_board_1"
+            android:background="@drawable/wooden_hanging_board"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.027" app:layout_constraintVertical_bias="0.0"/>
+
     <Button
             android:id="@+id/hero_pos_4"
             android:layout_width="120dp"
@@ -33,28 +43,28 @@
             android:id="@+id/inventory"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginBottom="330dp"
             android:background="@drawable/inventory_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintVertical_bias="0.124"/>
     <Button
             android:id="@+id/attackChoiceButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginBottom="330dp"
             android:background="@drawable/weapon_inventory_fight"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintVertical_bias="0.124"/>
     <ImageButton
             android:id="@+id/next_room"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_marginStart="580dp"
             android:background="@drawable/arrow"
-            android:layout_marginBottom="190dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:visibility="visible" />
+            tools:visibility="visible" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.927"
+            app:layout_constraintVertical_bias="0.475"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,6 +52,24 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
+            android:layout_width="382dp"
+            android:layout_height="116dp"
+
+            android:id="@+id/wooden_board_2"
+            android:background="@drawable/wooden_hanging_board"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.873" app:layout_constraintVertical_bias="0.0"/>
+    <ImageView
+            android:layout_width="159dp"
+            android:layout_height="116dp"
+
+            android:id="@+id/wooden_board_1"
+            android:background="@drawable/wooden_hanging_board"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.027" app:layout_constraintVertical_bias="0.0"/>
+    <ImageView
             android:layout_width="72dp"
             android:layout_height="67dp" app:srcCompat="@drawable/inventory_button"
             android:id="@+id/queue5"
@@ -97,13 +115,14 @@
             android:layout_marginBottom="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
+
     <Button
             android:soundEffectsEnabled="false"
             android:id="@+id/inventory"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginBottom="330dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="320dp"
             android:background="@drawable/inventory_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -112,12 +131,11 @@
             android:id="@+id/attackChoiceButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginBottom="330dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginBottom="320dp"
             android:background="@drawable/weapon_inventory_fight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-
     <ImageButton
             android:soundEffectsEnabled="false"
             android:id="@+id/next_room"
@@ -143,7 +161,7 @@
             android:layout_height="wrap_content" android:id="@+id/enemyText1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.436"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintVertical_bias="0.522"/>
     <TextView
             android:text="TextView"
@@ -151,7 +169,7 @@
             android:layout_height="wrap_content" android:id="@+id/enemyText2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.591"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.596"
             app:layout_constraintVertical_bias="0.589"/>
     <TextView
             android:text="TextView"
@@ -159,7 +177,7 @@
             android:layout_height="wrap_content" android:id="@+id/enemyText3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.747"
             app:layout_constraintVertical_bias="0.515"/>
     <TextView
             android:text="TextView"
@@ -167,6 +185,6 @@
             android:layout_height="wrap_content" android:id="@+id/enemyText4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.908"
             app:layout_constraintVertical_bias="0.571"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
