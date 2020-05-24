@@ -105,10 +105,12 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 queue4 = (ImageView)findViewById(R.id.queue4);
                 queue5 = (ImageView)findViewById(R.id.queue5);
                 queueCreation();
+
                 enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
                 enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
                 enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
                 enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
+
                 enemy1_animation.start();
                 enemy2_animation.start();
                 enemy3_animation.start();
@@ -157,9 +159,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy3.monsterType("Giant");
                 enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4=new Monster("",-9999, R.drawable.free_space,R.drawable.goblin_02_wait,0);
+                enemy4=new Monster("",-9999, R.drawable.free_space,R.drawable.free_space_img,0);
                 enemy4.setMonsterSpeed(0);
-                enemy4_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
+                enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
                 break;
             default:
                 break;
@@ -220,10 +222,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             enemy4.MonsterDeathAnimation();
 
         }
-        enemy1_image.setImageResource(enemy1.getMonsterView());
-        enemy2_image.setImageResource(enemy2.getMonsterView());
-        enemy3_image.setImageResource(enemy3.getMonsterView());
-        enemy4_image.setImageResource(enemy4.getMonsterView());
+        enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
+        enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
+        enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
+        enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
+
         enemyInfo1.setText(enemy1.getInfo());
         enemyInfo2.setText(enemy2.getInfo());
         enemyInfo3.setText(enemy3.getInfo());
@@ -271,6 +274,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         queue3.setImageResource(queue_pos_3.getMonsterView());
         queue4.setImageResource(queue_pos_4.getMonsterView());
         queue5.setImageResource(queue_pos_5.getMonsterView());
+
     }
     //атака монстра
     void enemyAttack(){
@@ -294,10 +298,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int)(Math.random()*3);
             audioPlayer.play(roll==0?audioPlayer.attack1ID:
                     (roll==2?audioPlayer.attack2ID:audioPlayer.attack3ID));
-            if (enemy == enemy1)
-                enemy1_image.setImageResource(R.drawable.goblin_02_hurt);
-                enemy1_animation.start();
-                enemy1_image.setImageResource(enemy1.getMonsterView());
 
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
