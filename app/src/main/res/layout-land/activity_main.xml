@@ -10,28 +10,28 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="86dp"
-        android:layout_height="72dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="204dp"
         android:layout_marginBottom="296dp"
-        android:text="Кузня"
+        android:background="@drawable/forgery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/homeButton"
-        android:layout_width="83dp"
-        android:layout_height="78dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="204dp"
         android:layout_marginBottom="164dp"
-        android:text="дом"
+        android:background="@drawable/house"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="82dp"
-        android:layout_height="78dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="92dp"
         android:text="квестгивер"
@@ -40,8 +40,8 @@
 
     <Button
         android:id="@+id/vendorButton"
-        android:layout_width="78dp"
-        android:layout_height="81dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="40dp"
         android:onClick="onClick"
@@ -51,8 +51,8 @@
 
     <Button
         android:id="@+id/forestButton"
-        android:layout_width="86dp"
-        android:layout_height="72dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="500dp"
         android:layout_marginBottom="296dp"
         android:text="Лес"
@@ -61,18 +61,18 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="86dp"
-        android:layout_height="72dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="580dp"
         android:layout_marginBottom="150dp"
-        android:text="Пещера"
+        android:background="@drawable/cave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="86dp"
-        android:layout_height="72dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="400dp"
         android:layout_marginBottom="35dp"
         android:text="Берег"
@@ -81,7 +81,7 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="86dp"
+        android:layout_width="100dp"
         android:layout_height="15dp"
         android:layout_marginStart="460dp"
         android:layout_marginBottom="280dp"

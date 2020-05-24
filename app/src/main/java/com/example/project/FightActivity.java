@@ -87,7 +87,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 queue4 = (ImageView)findViewById(R.id.queue4);
                 queue5 = (ImageView)findViewById(R.id.queue5);
                 queueCreation();
-                enemyAttack();      //нужна много поточность, один поток не выдерживает
+                enemyAttack();
 
                 break;
             case 2:
@@ -221,12 +221,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     }
 
     void enemyAttack(){
-        if (queue_pos_1!=hero){
+        if (queue_pos_1.getMonsterView()!=R.drawable.hero){
             audioPlayer.play((int)(Math.random()*2)==0?audioPlayer.goblin_attack1ID:
                     audioPlayer.goblin_attack2ID);
             hero.getDamage(queue_pos_1.getAttack());
             heroInfo.setText(hero.getMonsterHP()+"/"+hero.getMonsterMaxHP());
             queueSwap();
+            enemyAttack();
         }
     }
 
@@ -256,11 +257,15 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         queue5.setImageResource(queue_pos_5.getMonsterView());
     }
 
-
+    void heroDeath(Intent intent){
+        if (hero.getMonsterHP()<=0)
+            startActivity(intent);
+    }
 
 
     @Override
     public void onClick(View v) {
+        Intent heroDeathIntent = new Intent(this, MainActivity.class);
     switch (v.getId()){
         case R.id.next_room:
             audioPlayer.play(audioPlayer.click_buttonID);
@@ -280,18 +285,22 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         case R.id.enemy_pos_1:
             heroAttack(enemy1);
             enemyAttack();
+            heroDeath(heroDeathIntent);
             break;
         case R.id.enemy_pos_2:
             heroAttack(enemy2);
             enemyAttack();
+            heroDeath(heroDeathIntent);
             break;
         case R.id.enemy_pos_3:
             heroAttack(enemy3);
             enemyAttack();
+            heroDeath(heroDeathIntent);
             break;
         case R.id.enemy_pos_4:
             heroAttack(enemy4);
             enemyAttack();
+            heroDeath(heroDeathIntent);
             break;
         default:
             break;
