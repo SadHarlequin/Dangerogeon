@@ -8,4 +8,6 @@ public class Hero extends Monster{
     Hero(){}
 
     void setHeroMaxHp(int heroMaxHp){this.monsterMaxHP=heroMaxHp;}
+    String getHeroInfo(){
+        return monsterHP+"/"+monsterMaxHP+" HP\nAttack "+attack;}
 }
