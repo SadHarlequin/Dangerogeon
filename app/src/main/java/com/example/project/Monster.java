@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 
 
 public class Monster {
@@ -62,7 +63,7 @@ public class Monster {
 
     String getInfo(){
         if (monsterHP<=0) return "";
-        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP+"\n"+monsterSpeed;}
+        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP+" HP\nAttack "+attack;}
 
     void setHP(int n){
         this.monsterHP=n;
@@ -71,6 +72,16 @@ public class Monster {
     int getMonsterHP (){
         return monsterHP;
     }
+
+    void MonsterDeathAnimation() {
+        try {
+            Thread.sleep(500); //Приостанавливает поток на 1 секунду
+        } catch (Exception e) {
+        }
+        setMonsterView(R.drawable.grave);
+        setAttack(0);
+    }
+
 
     void monsterType(String n){
         switch (n){
@@ -88,14 +99,17 @@ public class Monster {
                 this.monsterStrong="Magic";
                 this.monsterWeakness="One-handed";
                 this.monsterSpeed=(int)(Math.random()*6)+2;
+                break;
             case("Giant"):
                 this.monsterStrong="Crushing";
                 this.monsterWeakness="Pierce";
-                this.monsterSpeed=(int)(Math.random());
+                this.monsterSpeed=(int)(Math.random())+1;
+                break;
             case("Mystic"):
                 this.monsterStrong="Two-handed";
                 this.monsterWeakness="Magic";
                 this.monsterSpeed=(int)(Math.random()*5)+3;
+                break;
             default:
                 break;
         }

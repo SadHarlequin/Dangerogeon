@@ -16,22 +16,6 @@ class SFXPlayer implements Serializable {
     private SoundPool soundPool;
     private MediaPlayer mediaPlayer;
 
-    //private Context context;
-    /*int armorID,
-    attack1ID,
-    attack2ID,
-    attack3ID,
-    click_buttonID,
-    coinID,
-    goblin_attack1ID,
-    goblin_attack2ID,
-    goblin_death_rattle1ID,
-    goblin_death_rattle2ID,
-    goblin_hitID,
-    main_themeID,
-    open_chestID,
-    open_inventoryID,
-    weaponID;*/
     int armorID = R.raw.armor,
     attack1ID = R.raw.attack1,
     attack2ID =R.raw.attack2,
@@ -51,8 +35,8 @@ class SFXPlayer implements Serializable {
 
     private static Logger log = Logger.getLogger("SfxPlayer");
 
-    SFXPlayer(/*final Context context*/) {
-        //this.context = context;
+    SFXPlayer() {
+
         AudioAttributes.Builder attributesBuilder = new AudioAttributes.Builder();
         attributesBuilder.setUsage(AudioAttributes.USAGE_GAME);
         attributesBuilder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
@@ -63,8 +47,6 @@ class SFXPlayer implements Serializable {
         soundpoolBuilder.setMaxStreams(20);
 
         soundPool = soundpoolBuilder.build();
-
-        //this.mediaPlayer = new MediaPlayer();
         /*streamThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -105,9 +87,7 @@ class SFXPlayer implements Serializable {
         weaponID = soundPool.load(context,R.raw.weapon,1);*/
 
     }
-    void setContext(Context context){
-        //this.context = context;
-    }
+
     void loadSounds(final Context context){
      //   Thread streamThread = new Thread(new Runnable() {
        //     @Override
@@ -115,30 +95,29 @@ class SFXPlayer implements Serializable {
              //   soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
              //       @Override
               //      public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-
-
+              //
 
                 armorID = soundPool.load(context,R.raw.armor,1);
-                log.log(Level.INFO," загружен объект");
+                log.log(Level.INFO," загружен объект armorID");
                 attack1ID = soundPool.load(context,R.raw.attack1,1);
-                log.log(Level.INFO," загружен объект");
+                log.log(Level.INFO," загружен объект  attack1ID");
                 attack2ID = soundPool.load(context,R.raw.attack2,1);
-                log.log(Level.INFO," загружен объект");
+                log.log(Level.INFO," загружен объект attack2ID");
                 attack3ID = soundPool.load(context,R.raw.attack3,1);
-                log.log(Level.INFO," загружен объект");
+                log.log(Level.INFO," загружен объект attack3ID");
                 click_buttonID = soundPool.load(context,R.raw.click_button,1);
-                        log.log(Level.INFO," загружен объект");
+                        log.log(Level.INFO," загружен объект  click_buttonID");
                 //coinID = soundPool.load(context,R.raw.coin,1);
                 goblin_attack1ID = soundPool.load(context,R.raw.goblin_attack1,1);
-                        log.log(Level.INFO," загружен объект");
+                        log.log(Level.INFO," загружен объект  goblin_attack1ID");
                 goblin_attack2ID = soundPool.load(context,R.raw.goblin_attack2,1);
-                        log.log(Level.INFO," загружен объект");
+                        log.log(Level.INFO," загружен объект  goblin_attack2ID");
                 goblin_death_rattle1ID = soundPool.load(context,R.raw.goblin_death_rattle1,1);
-                        log.log(Level.INFO," загружен объект");
+                        log.log(Level.INFO," загружен объект goblin_death_rattle1ID ");
                 goblin_death_rattle2ID = soundPool.load(context,R.raw.goblin_death_rattle2,1);
-                        log.log(Level.INFO," загружен объект");
+                        log.log(Level.INFO," загружен объект  goblin_death_rattle2ID");
                 goblin_hitID = soundPool.load(context,R.raw.goblin_hit,1);
-                        log.log(Level.INFO," загружены все объекты");
+                        log.log(Level.INFO,"  загружен goblin_hitID и все объекты");
 
                 //main_themeID = soundPool.load(context,R.raw.main_theme,1);
                 //open_chestID = soundPool.load(context,R.raw.open_chest,1);
@@ -149,7 +128,7 @@ class SFXPlayer implements Serializable {
                 /*soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
                     @Override
                     public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                        soundPool.play(audio,1, 1, 1, 0, 1f);
+
                     }
                 });*/
 
