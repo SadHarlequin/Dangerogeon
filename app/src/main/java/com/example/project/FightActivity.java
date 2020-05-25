@@ -337,11 +337,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int) (Math.random() * 3);
             audioPlayer.play(roll == 0 ? audioPlayer.attack1ID :
                     (roll == 2 ? audioPlayer.attack2ID : audioPlayer.attack3ID));
-            enemy_image.setBackgroundResource(enemy.getMonsterAnimationHurt());
-            enemy_animation.start();
+
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
-            enemy_image.setBackgroundResource(enemy.getMonsterAnimationWait());
+
             enemyDeath();
             queueSwap();
         }
