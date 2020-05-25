@@ -85,9 +85,9 @@
     <Button
             android:id="@+id/button9"
             android:soundEffectsEnabled="false"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/settings_button"
+            android:layout_width="20dp"
+            android:layout_height="24dp"
+            android:background="@drawable/volume_on_settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.022"
