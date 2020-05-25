@@ -15,7 +15,7 @@ import static android.media.MediaPlayer.create;
 class SFXPlayer implements Serializable {
     private SoundPool soundPool;
     private MediaPlayer mediaPlayer;
-    Thread handleThread;
+    private Thread handleThread;
 
     int armorID = R.raw.armor,
     attack1ID = R.raw.attack1,

@@ -59,6 +59,7 @@
             app:layout_constraintVertical_bias="0.124"/>
     <ImageButton
             android:id="@+id/next_room"
+            android:soundEffectsEnabled="false"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:background="@drawable/arrow"

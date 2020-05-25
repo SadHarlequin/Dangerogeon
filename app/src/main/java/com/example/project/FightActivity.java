@@ -199,55 +199,95 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     //смерть монстра и сдвиг трупа в конец
     void enemyDeath() {
-       // Thread thread = new Thread(new Runnable() {
-          //  @Override
-    //        public void run() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
 
 
         audioPlayer.play((int) (Math.random() * 2) == 0 ? audioPlayer.goblin_death_rattle1ID
                 : audioPlayer.goblin_death_rattle2ID);
         Monster swap;
         if (enemy1.getMonsterHP() <= 0) {
-            enemy1.MonsterDeathAnimation();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (enemy1.getMonsterHP() <= 0)
+                        enemy1.MonsterDeathAnimation();
+                }
+            });
             swap = enemy1;
             enemy1 = enemy2;
             enemy2 = swap;
         }
         if (enemy2.getMonsterHP() <= 0) {
-            enemy2.MonsterDeathAnimation();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (enemy2.getMonsterHP() <= 0)
+                        enemy2.MonsterDeathAnimation();
+                }
+            });
+            //enemy2.MonsterDeathAnimation();
             swap = enemy2;
             enemy2 = enemy3;
             enemy3 = swap;
         }
         if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() != -9999) {
-            enemy3.MonsterDeathAnimation();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() != -9999)
+                        enemy3.MonsterDeathAnimation();
+                }
+            });
+            //enemy3.MonsterDeathAnimation();
             swap = enemy3;
             enemy3 = enemy4;
             enemy4 = swap;
         }
         if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() == -9999) {
-            enemy3.MonsterDeathAnimation();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() == -9999)
+                        enemy3.MonsterDeathAnimation();
+                }
+            });
+            //enemy3.MonsterDeathAnimation();
         }
         if (enemy4.getMonsterHP() <= 0 & enemy4.getMonsterHP() > -9999) {
-            enemy4.MonsterDeathAnimation();
-        }
-        enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
-        enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
-        enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
-        enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
-
-        enemyInfo1.setText(enemy1.getInfo());
-        enemyInfo2.setText(enemy2.getInfo());
-        enemyInfo3.setText(enemy3.getInfo());
-        enemyInfo4.setText(enemy4.getInfo());
-        if (enemy1.getMonsterHP() <= 0 & enemy2.getMonsterHP() <= 0 & enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() <= 0) {
-            nextRoom.setClickable(true);
-            nextRoom.setVisibility(View.VISIBLE);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (enemy4.getMonsterHP() <= 0 & enemy4.getMonsterHP() > -9999)
+                        enemy4.MonsterDeathAnimation();
+                }
+            });
+            //enemy4.MonsterDeathAnimation();
         }
 
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
+                        enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
+                        enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
+                        enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
+                        enemyInfo1.setText(enemy1.getInfo());
+                        enemyInfo2.setText(enemy2.getInfo());
+                        enemyInfo3.setText(enemy3.getInfo());
+                        enemyInfo4.setText(enemy4.getInfo());
+                        if (enemy1.getMonsterHP() <= 0 & enemy2.getMonsterHP() <= 0 & enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() <= 0) {
+                            nextRoom.setClickable(true);
+                            nextRoom.setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
+            }
+    });
+        thread.start();
+        thread.interrupt();
     }
-    //    });
-   // }
 
     //создание очереди
     void queueCreation() {
