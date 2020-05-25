@@ -25,6 +25,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     Monster enemy3;
     Monster enemy4;
     //изображения монстров для текущих позиций
+    ImageButton hero_image;
     ImageButton enemy1_image;
     ImageButton enemy2_image;
     ImageButton enemy3_image;
@@ -69,12 +70,12 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         hero.setHeroMaxHp(200);
         hero.setAttack(50);
         hero.setMonsterView(R.drawable.hero);
-        //hero_animation
+
 
         super.onCreate(savedInstanceState);
         switch (roomChoice) {
             case 1:
-                monsterChoice = (int) (Math.random() * 2) + 1;
+                monsterChoice = (int) (Math.random() * 3) + 1;
                 setContentView(R.layout.fight_area);
                 nextRoom = (ImageButton) findViewById(R.id.next_room);
                 nextRoom.setOnClickListener(this);
@@ -88,6 +89,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy3_image.setOnClickListener(this);
                 enemy4_image = findViewById(R.id.enemy_pos_4);
                 enemy4_image.setOnClickListener(this);
+                hero_image = findViewById(R.id.hero_pos_4);
+                hero_image.setOnClickListener(this);
+                hero_image.setBackgroundResource(R.drawable.hero_wait);
+
                 squadCreation(monsterChoice);
                 enemyInfo1 = findViewById(R.id.enemyText1);
                 enemyInfo2 = findViewById(R.id.enemyText2);
@@ -106,11 +111,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 queue5 = findViewById(R.id.queue5);
                 queueCreation();
 
+                hero_animation = (AnimationDrawable) hero_image.getBackground();
                 enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
                 enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
                 enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
                 enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
 
+                hero_animation.start();
                 enemy1_animation.start();
                 enemy2_animation.start();
                 enemy3_animation.start();
@@ -120,6 +127,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case 2:
                 setContentView(R.layout.treasure_activity);
+                hero_image = findViewById(R.id.hero_pos_4);
+                hero_image.setOnClickListener(this);
+                hero_image.setBackgroundResource(R.drawable.hero_wait);
+                hero_animation = (AnimationDrawable) hero_image.getBackground();
+                hero_animation.start();
                 nextRoom = findViewById(R.id.next_room);
                 nextRoom.setOnClickListener(this);
                 break;
@@ -130,38 +142,55 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     void squadCreation(int monsterChoice) {
         switch (monsterChoice) {
             case 1:
-                enemy1 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait, 5);
+                enemy1 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
 
-                enemy2 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait, 5);
+                enemy2 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
                 enemy2.monsterType("Soldier");
                 enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
 
-                enemy3 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait, 5);
+                enemy3 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
                 enemy3.monsterType("Soldier");
                 enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait, 10);
+                enemy4 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.goblin_02_hurt, 10);
                 enemy4.monsterType("Giant");
                 enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
                 break;
             case 2:
-                enemy1 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait, 5);
+                enemy1 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
                 enemy1.monsterType("Soldier");
                 enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
 
-                enemy2 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait, 5);
+                enemy2 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
                 enemy2.monsterType("Soldier");
                 enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
 
-                enemy3 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait, 10);
+                enemy3 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.goblin_02_hurt, 10);
                 enemy3.monsterType("Giant");
                 enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4 = new Monster("", -9999, R.drawable.free_space, R.drawable.free_space_img, 0);
+                enemy4 = new Monster("", -9999, R.drawable.free_space, R.drawable.free_space_img,R.drawable.free_space_img, 0);
                 enemy4.setMonsterSpeed(0);
                 enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
+                break;
+            case 3:
+                enemy1 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
+                enemy1.monsterType("Soldier");
+                enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
+
+                enemy2 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
+                enemy2.monsterType("Soldier");
+                enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
+
+                enemy3 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
+                enemy3.monsterType("Soldier");
+                enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
+
+                enemy4 = new Monster("Goblin", 50, R.drawable.goblin_02, R.drawable.goblin_02_wait,R.drawable.goblin_02_hurt, 5);
+                enemy4.monsterType("Soldier");
+                enemy4_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
                 break;
             default:
                 break;

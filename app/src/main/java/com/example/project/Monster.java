@@ -13,20 +13,29 @@ public class Monster {
     String monsterStrong;
     int monsterView;
     int monsterAnimationWait;
+    int monsterAnimationHurt;
     int monsterSpeed;
     int attack;
 
+    public int getMonsterAnimationHurt() {
+        return monsterAnimationHurt;
+    }
+
+    public void setMonsterAnimationHurt(int monsterAnimationHurt) {
+        this.monsterAnimationHurt = monsterAnimationHurt;
+    }
     void setAttack(int power){this.attack=power; }
 
     int getAttack(){return attack;}
 
-    Monster(String monsterName, int monsterMaxHP, int monsterView,int monsterAnimationWait, int attack){
+    Monster(String monsterName, int monsterMaxHP, int monsterView,int monsterAnimationWait,int monsterAnimationHurt, int attack){
         this.monsterMaxHP = monsterMaxHP;
         this.monsterHP = monsterMaxHP;
         this.monsterName = monsterName;
         this.monsterView = monsterView;
         this.attack=attack;
         this.monsterAnimationWait=monsterAnimationWait;
+        this.monsterAnimationHurt=monsterAnimationHurt;
     }
 
     Monster(String monsterName, int monsterMaxHP, int monsterView, int attack){

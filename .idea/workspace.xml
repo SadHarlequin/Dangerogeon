@@ -14,37 +14,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af63294-c6b8-4eb0-80c5-e105f3ea42ab" name="Default Changelist" comment="V. 1.1.1">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait_07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/wooden_hanging_board.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait_00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait_01.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hub.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hub.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_hurt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_hurt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_wait.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +82,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.project" />
     </key>
@@ -102,9 +93,6 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GITRepos\Dangerogeon\app\src\main\res\raw" />
-      <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
     </key>
   </component>
@@ -183,22 +171,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="РАБОЧАЯ ШТУКА!!!!!!!!!" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1588955451293">
+    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1590393368779">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1588955451293" />
-    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1588955451293">
+    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1590393368779" />
+    <state x="81" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590397409448">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1588955451293" />
-    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1588955451292">
+    <state x="81" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.984@0.0.1280.984" timestamp="1590397409448" />
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1590399982756">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1588955451292" />
-    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1588955451293">
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
+    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1590399982756">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1588955451293" />
+    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
+    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1590399982756">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
+    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1590399982756">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
     <state x="220" y="238" key="IDE.errors.dialog" timestamp="1588955896246">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
