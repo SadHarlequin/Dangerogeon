@@ -21,8 +21,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6P_API_R" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-25T12:58:59.787604400Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-25T15:36:33.962950400Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="device.picker.selection" value="Pixel_2_API_29" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
@@ -161,6 +166,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="РАБОЧАЯ ШТУКА!!!!!!!!!" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="349" y="173" key="#app" timestamp="1590420563776">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="349" y="173" key="#app/0.0.1280.984@0.0.1280.984" timestamp="1590420563776" />
     <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1590393368779">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -169,29 +178,29 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="81" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.984@0.0.1280.984" timestamp="1590397409448" />
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1590413502525">
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1590420483105">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590413502525" />
-    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1590413502524">
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590420483105" />
+    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1590420483105">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590413502524" />
-    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1590413502524">
+    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590420483105" />
+    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1590420483104">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590413502524" />
-    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1590413502524">
+    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590420483104" />
+    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1590420483105">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590413502524" />
+    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590420483105" />
     <state x="220" y="238" key="IDE.errors.dialog" timestamp="1588955896246">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="220" y="238" key="IDE.errors.dialog/0.0.1280.984@0.0.1280.984" timestamp="1588955896246" />
-    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590417822742">
+    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590420318646">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1590417822742" />
+    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1590420318646" />
   </component>
 </project>

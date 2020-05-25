@@ -14,10 +14,10 @@
             android:layout_width="121dp"
             android:background="@drawable/hero"
             android:layout_height="132dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginBottom="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.103"
+            app:layout_constraintVertical_bias="0.802"/>
 
     <ImageButton
             android:soundEffectsEnabled="false"
@@ -25,32 +25,31 @@
             android:background="@drawable/free_space"
             android:layout_width="105dp"
             android:layout_height="135dp"
-            android:layout_marginStart="268dp"
-            android:layout_marginBottom="52dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintVertical_bias="0.88"/>
     <ImageButton
             android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_2"
             android:layout_width="105dp"
             android:background="@drawable/free_space"
             android:layout_height="135dp"
-            android:layout_marginStart="372dp"
-            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.594"
+            app:layout_constraintVertical_bias="0.942"/>
+
     <ImageButton
             android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_3"
             android:layout_width="105dp"
             android:background="@drawable/free_space"
             android:layout_height="135dp"
-            android:layout_marginStart="476dp"
-            android:layout_marginBottom="52dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.761"
+            app:layout_constraintVertical_bias="0.811"/>
     <ImageView
             android:layout_width="382dp"
             android:layout_height="116dp"
@@ -105,48 +104,48 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.477" app:layout_constraintVertical_bias="0.09"/>
+
     <ImageButton
             android:soundEffectsEnabled="false"
             android:id="@+id/enemy_pos_4"
             android:layout_width="105dp"
             android:layout_height="135dp"
             android:background="@drawable/free_space"
-            android:layout_marginStart="572dp"
-            android:layout_marginBottom="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.929"
+            app:layout_constraintVertical_bias="0.88"/>
     <Button
             android:soundEffectsEnabled="false"
             android:id="@+id/inventory"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="320dp"
             android:background="@drawable/inventory_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintVertical_bias="0.132"/>
     <Button
             android:soundEffectsEnabled="false"
             android:id="@+id/attackChoiceButton"
             android:layout_width="65dp"
             android:layout_height="58dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginBottom="320dp"
             android:background="@drawable/weapon_inventory_fight"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.138"
+            app:layout_constraintVertical_bias="0.116"/>
     <ImageButton
             android:soundEffectsEnabled="false"
             android:id="@+id/next_room"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_marginStart="580dp"
             android:background="@drawable/arrow"
-            android:layout_marginBottom="190dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:visibility="visible"/>
+            tools:visibility="visible" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintVertical_bias="0.451"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -161,16 +160,16 @@
             android:layout_height="wrap_content" android:id="@+id/enemyText1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.452"
-            app:layout_constraintVertical_bias="0.522"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintVertical_bias="0.54"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/enemyText2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.596"
-            app:layout_constraintVertical_bias="0.589"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.584"
+            app:layout_constraintVertical_bias="0.614"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
