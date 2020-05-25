@@ -170,6 +170,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     //смерть монстра и сдвиг трупа в конец
     void enemyDeath() {
+       // Thread thread = new Thread(new Runnable() {
+          //  @Override
+    //        public void run() {
+
+
         audioPlayer.play((int) (Math.random() * 2) == 0 ? audioPlayer.goblin_death_rattle1ID
                 : audioPlayer.goblin_death_rattle2ID);
         Monster swap;
@@ -210,7 +215,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             nextRoom.setClickable(true);
             nextRoom.setVisibility(View.VISIBLE);
         }
+
     }
+    //    });
+   // }
 
     //создание очереди
     void queueCreation() {
@@ -219,34 +227,70 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         queue_pos_3 = enemy2;
         queue_pos_4 = enemy3;
         queue_pos_5 = enemy4;
-        Monster temp;
-        boolean swapped = true;
-        while (swapped == true) {
-            if (queue_pos_1.getMonsterSpeed() < queue_pos_2.getMonsterSpeed()) {
-                temp = queue_pos_1;
-                queue_pos_1 = queue_pos_2;
-                queue_pos_2 = temp;
-            } else if (queue_pos_2.getMonsterSpeed() < queue_pos_3.getMonsterSpeed()) {
-                temp = queue_pos_2;
-                queue_pos_2 = queue_pos_3;
-                queue_pos_3 = temp;
-            } else if (queue_pos_3.getMonsterSpeed() < queue_pos_4.getMonsterSpeed()) {
-                temp = queue_pos_3;
-                queue_pos_3 = queue_pos_4;
-                queue_pos_4 = temp;
-            } else if (queue_pos_4.getMonsterSpeed() < queue_pos_5.getMonsterSpeed()) {
-                temp = queue_pos_4;
-                queue_pos_4 = queue_pos_5;
-                queue_pos_5 = temp;
-            } else
-                swapped = false;
-        }
-        queue1.setImageResource(queue_pos_1.getMonsterView());
-        queue2.setImageResource(queue_pos_2.getMonsterView());
-        queue3.setImageResource(queue_pos_3.getMonsterView());
-        queue4.setImageResource(queue_pos_4.getMonsterView());
-        queue5.setImageResource(queue_pos_5.getMonsterView());
+        final Monster[] temp = new Monster[1];
+        final boolean[] swapped = {true};
+        Thread stream = new Thread(new Runnable() {
+            @Override
+            public void run() {
 
+                while (swapped[0]) {
+                    if (queue_pos_1.getMonsterSpeed() < queue_pos_2.getMonsterSpeed()) {
+                        temp[0] = queue_pos_1;
+                        queue_pos_1 = queue_pos_2;
+                        queue_pos_2 = temp[0];
+                    } else if (queue_pos_2.getMonsterSpeed() < queue_pos_3.getMonsterSpeed()) {
+                        temp[0] = queue_pos_2;
+                        queue_pos_2 = queue_pos_3;
+                        queue_pos_3 = temp[0];
+                    } else if (queue_pos_3.getMonsterSpeed() < queue_pos_4.getMonsterSpeed()) {
+                        temp[0] = queue_pos_3;
+                        queue_pos_3 = queue_pos_4;
+                        queue_pos_4 = temp[0];
+                    } else if (queue_pos_4.getMonsterSpeed() < queue_pos_5.getMonsterSpeed()) {
+                        temp[0] = queue_pos_4;
+                        queue_pos_4 = queue_pos_5;
+                        queue_pos_5 = temp[0];
+                    } else
+                        swapped[0] = false;
+                }
+                queue1.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        queue1.setImageResource(queue_pos_1.getMonsterView());
+                    }
+                });
+                queue2.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        queue2.setImageResource(queue_pos_2.getMonsterView());
+                    }
+                });
+                queue3.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        queue3.setImageResource(queue_pos_3.getMonsterView());
+                    }
+                });
+                queue4.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        queue4.setImageResource(queue_pos_4.getMonsterView());
+                    }
+                });
+                queue5.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        queue5.setImageResource(queue_pos_5.getMonsterView());
+                    }
+                });
+                //queue2.setImageResource(queue_pos_2.getMonsterView());
+                //queue3.setImageResource(queue_pos_3.getMonsterView());
+                //queue4.setImageResource(queue_pos_4.getMonsterView());
+                //queue5.setImageResource(queue_pos_5.getMonsterView());
+            }
+        });
+        stream.start();
+        stream.interrupt();
     }
 
     //атака монстра

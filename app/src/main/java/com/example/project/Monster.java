@@ -89,10 +89,6 @@ public class Monster {
     }
 
     void MonsterDeathAnimation() {
-        try {
-            Thread.sleep(500); //Приостанавливает поток на 1 секунду
-        } catch (Exception e) {
-        }
         setMonsterView(R.drawable.grave);
         setMonsterAnimationWait(R.drawable.grave_img);
         setAttack(0);

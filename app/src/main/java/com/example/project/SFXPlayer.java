@@ -15,6 +15,7 @@ import static android.media.MediaPlayer.create;
 class SFXPlayer implements Serializable {
     private SoundPool soundPool;
     private MediaPlayer mediaPlayer;
+    Thread handleThread;
 
     int armorID = R.raw.armor,
     attack1ID = R.raw.attack1,
@@ -89,14 +90,9 @@ class SFXPlayer implements Serializable {
     }
 
     void loadSounds(final Context context){
-     //   Thread streamThread = new Thread(new Runnable() {
-       //     @Override
-          //  public void run() {
-             //   soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-             //       @Override
-              //      public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-              //
-
+        Thread streamThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
                 armorID = soundPool.load(context,R.raw.armor,1);
                 log.log(Level.INFO," загружен объект armorID");
                 attack1ID = soundPool.load(context,R.raw.attack1,1);
@@ -123,7 +119,7 @@ class SFXPlayer implements Serializable {
                 //open_chestID = soundPool.load(context,R.raw.open_chest,1);
                 //open_inventoryID = soundPool.load(context,R.raw.open_inventory,1);
                 //weaponID = soundPool.load(context,R.raw.weapon,1);
-                  //  }
+            }
             //    });
                 /*soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
                     @Override
@@ -133,33 +129,51 @@ class SFXPlayer implements Serializable {
                 });*/
 
        //     }
-      //  });
-       // streamThread.start();
+       });
+       streamThread.start();
+       //streamThread = null;
+       streamThread.interrupt();
 
     }
 
-    void play(int audioID) {
-        soundPool.play(audioID,1,1,0,0,1f);
-    }
+    void play(final int audioID) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                soundPool.play(audioID, 1, 1, 0, 0, 1f);
+            }
+        });
+        thread.start();
+        thread.interrupt();
+        }
 
-    void startMusic(Context context, int audioID){
-       if (mediaPlayer == null) {
-           mediaPlayer = MediaPlayer.create(context, audioID);
-            log.log(Level.INFO, "Создан медиаплеер");
-       }else {
-           mediaPlayer.release();
-           mediaPlayer = MediaPlayer.create(context, audioID);
-           log.log(Level.INFO, "Создан медиаплеер после удаления");
-       }
-       mediaPlayer.setLooping(true);
-        mediaPlayer.start();
-        log.log(Level.INFO,"Стартует музыка");
+    void startMusic(final Context context, final int audioID){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (mediaPlayer == null) {
+                    mediaPlayer = MediaPlayer.create(context, audioID);
+                    log.log(Level.INFO, "Создан медиаплеер");
+                }else {
+                    mediaPlayer.release();
+                    mediaPlayer = MediaPlayer.create(context, audioID);
+                    log.log(Level.INFO, "Создан медиаплеер после удаления");
+                }
+                mediaPlayer.setLooping(true);
+                mediaPlayer.start();
+                log.log(Level.INFO,"Стартует музыка");
+
+            }
+        });
+      thread.start();
+      handleThread = thread;
     }
 
     void stopMusic(){
         mediaPlayer.stop();
         mediaPlayer.release();
         log.log(Level.INFO, "Медиаплеер удален");
+        handleThread.interrupt();
     }
 
 }
