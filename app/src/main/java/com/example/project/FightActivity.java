@@ -154,7 +154,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy3.monsterType("Soldier");
                 enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
-                enemy4 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.goblin_02_hurt, 10);
+                enemy4 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.golem_hurt, 10);
                 enemy4.monsterType("Giant");
                 enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
                 break;
@@ -167,7 +167,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy2.monsterType("Soldier");
                 enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
 
-                enemy3 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.goblin_02_hurt, 10);
+                enemy3 = new Monster("Golem", 100, R.drawable.golem, R.drawable.golem_wait,R.drawable.golem_hurt, 10);
                 enemy3.monsterType("Giant");
                 enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
 
@@ -199,10 +199,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     //смерть монстра и сдвиг трупа в конец
     void enemyDeath() {
-       // Thread thread = new Thread(new Runnable() {
-          //  @Override
-    //        public void run() {
-
 
         audioPlayer.play((int) (Math.random() * 2) == 0 ? audioPlayer.goblin_death_rattle1ID
                 : audioPlayer.goblin_death_rattle2ID);
@@ -261,7 +257,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         Thread stream = new Thread(new Runnable() {
             @Override
             public void run() {
-
                 while (swapped[0]) {
                     if (queue_pos_1.getMonsterSpeed() < queue_pos_2.getMonsterSpeed()) {
                         temp[0] = queue_pos_1;
@@ -337,14 +332,16 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     }
 
     //атака героя
-    void heroAttack(Monster enemy) {
+    void heroAttack(Monster enemy, ImageView enemy_image, AnimationDrawable enemy_animation) {
         if (enemy.getMonsterHP() > 0) {
             int roll = (int) (Math.random() * 3);
             audioPlayer.play(roll == 0 ? audioPlayer.attack1ID :
                     (roll == 2 ? audioPlayer.attack2ID : audioPlayer.attack3ID));
-
+            enemy_image.setBackgroundResource(enemy.getMonsterAnimationHurt());
+            enemy_animation.start();
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
+            enemy_image.setBackgroundResource(enemy.getMonsterAnimationWait());
             enemyDeath();
             queueSwap();
         }
@@ -391,22 +388,22 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.enemy_pos_1:
-                heroAttack(enemy1);
+                heroAttack(enemy1, enemy1_image, enemy1_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_2:
-                heroAttack(enemy2);
+                heroAttack(enemy2, enemy2_image, enemy2_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_3:
-                heroAttack(enemy3);
+                heroAttack(enemy3, enemy3_image, enemy3_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_4:
-                heroAttack(enemy4);
+                heroAttack(enemy4, enemy4_image, enemy4_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
