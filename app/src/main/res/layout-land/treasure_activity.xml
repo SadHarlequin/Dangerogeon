@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.027" app:layout_constraintVertical_bias="0.0"/>
 
-    <Button
+    <ImageButton
             android:id="@+id/hero_pos_4"
             android:layout_width="120dp"
             android:background="@drawable/hero"

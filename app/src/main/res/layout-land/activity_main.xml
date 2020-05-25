@@ -16,7 +16,7 @@
             android:background="@drawable/forgery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.304"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.435"
             app:layout_constraintVertical_bias="0.212"/>
     <Button
             android:id="@+id/homeButton"
@@ -26,8 +26,8 @@
             android:background="@drawable/house"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.304"
-            app:layout_constraintVertical_bias="0.646"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintVertical_bias="0.762"/>
     <Button
             android:id="@+id/button4"
             android:soundEffectsEnabled="false"
@@ -49,8 +49,8 @@
             android:background="@drawable/tent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.085"
-            app:layout_constraintVertical_bias="0.282"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintVertical_bias="0.212"/>
     <Button
             android:id="@+id/forestButton"
             android:layout_width="100dp"

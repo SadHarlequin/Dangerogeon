@@ -7,9 +7,9 @@
     <item android:drawable="@drawable/hero_wait_00"
           android:duration="150" />
     <item android:drawable="@drawable/hero_wait_00"
-          android:duration="150" />
+          android:duration="300" />
     <item android:drawable="@drawable/hero_wait_00"
-          android:duration="150" />
+          android:duration="300" />
     <item android:drawable="@drawable/hero_wait_01"
           android:duration="150" />
 </animation-list>

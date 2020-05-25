@@ -14,10 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af63294-c6b8-4eb0-80c5-e105f3ea42ab" name="Default Changelist" comment="V. 1.1.1">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait_00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait_01.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -26,13 +22,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_hurt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_hurt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goblin_02_wait.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/golem_wait.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hero_wait.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hub.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/hub.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/treasure_activity.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +66,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6P_API_R" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-24T13:04:37.967079700Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-25T12:58:59.787604400Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="device.picker.selection" value="Pixel_2_API_29" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
@@ -179,22 +173,22 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="81" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.984@0.0.1280.984" timestamp="1590397409448" />
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1590399982756">
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom" timestamp="1590405353501">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
-    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1590399982756">
+    <state width="1220" height="256" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590405353501" />
+    <state width="1220" height="256" key="GridCell.Tab.0.center" timestamp="1590405353501">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
-    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1590399982756">
+    <state width="1220" height="256" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590405353501" />
+    <state width="1220" height="256" key="GridCell.Tab.0.left" timestamp="1590405353501">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
-    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1590399982756">
+    <state width="1220" height="256" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590405353501" />
+    <state width="1220" height="256" key="GridCell.Tab.0.right" timestamp="1590405353501">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590399982756" />
+    <state width="1220" height="256" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590405353501" />
     <state x="220" y="238" key="IDE.errors.dialog" timestamp="1588955896246">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
