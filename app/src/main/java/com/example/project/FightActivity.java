@@ -5,6 +5,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     FragmentManager fm;
     Fragment fragment;
     ImageButton nextRoom;
-
+    Button inventory;
     //переменные для текущих позиций монстров
     Monster enemy1;
     Monster enemy2;
@@ -78,7 +79,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         hero.setHeroMaxHp(200);
         hero.setAttack(50);
         hero.setMonsterView(R.drawable.hero);
-
+        inventory = (Button)findViewById(R.id.inventory);
 
         super.onCreate(savedInstanceState);
         switch (roomChoice) {
@@ -542,6 +543,15 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 weapon_choice_cancel.setClickable(false);
                 weapon_choice_cancel.setVisibility(View.INVISIBLE);
                 break;
+            case R.id.inventory:
+                //InventoryFragment fragment = new InventoryFragment();
+                //FragmentManager fragmentManager = getSupportFragmentManager();
+                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                //fragmentTransaction.add(R.id.list,fragment,null);
+                //fragmentTransaction.hide(fragment);
+                //fragmentTransaction.commit();
+
+
             default:
                 break;
         }

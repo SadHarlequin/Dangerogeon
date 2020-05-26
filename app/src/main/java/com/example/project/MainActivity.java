@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2);
                 break;
             case R.id.sound_button:
-//                audioPlayer.play(audioPlayer.click_buttonID);
+
                 if(audioPlayer.mediaPlayer!=null)
                     if (musicState){
                         audioPlayer.stopMusic();
