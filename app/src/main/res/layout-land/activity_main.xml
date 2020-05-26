@@ -51,16 +51,19 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintVertical_bias="0.212"/>
+
     <Button
-            android:id="@+id/forestButton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Лес"
-            android:soundEffectsEnabled="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.911"
-            app:layout_constraintVertical_bias="0.099"/>
+        android:id="@+id/forestButton"
+        android:layout_width="186dp"
+        android:layout_height="81dp"
+        android:background="@drawable/free_space"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099" />
     <Button
             android:id="@+id/button7"
             android:soundEffectsEnabled="false"
