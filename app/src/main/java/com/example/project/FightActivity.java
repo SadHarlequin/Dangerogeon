@@ -2,7 +2,6 @@ package com.example.project;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -10,6 +9,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import static com.example.project.MainActivity.audioPlayer;
 
@@ -18,7 +20,13 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     int numOfRooms;
     int monsterChoice;
     int roomChoice;
+    ImageButton weapon_choice;
+    ImageButton weapon_choice_cancel;
+    FragmentTransaction ft;
+    FragmentManager fm;
+    Fragment fragment;
     ImageButton nextRoom;
+
     //переменные для текущих позиций монстров
     Monster enemy1;
     Monster enemy2;
@@ -81,6 +89,19 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 nextRoom.setOnClickListener(this);
                 nextRoom.setVisibility(View.INVISIBLE);
                 nextRoom.setClickable(false);
+
+                weapon_choice = findViewById(R.id.attackChoiceButton);
+                weapon_choice.setOnClickListener(this);
+                weapon_choice_cancel = findViewById(R.id.attackChoiceButtonCancel);
+                weapon_choice_cancel.setOnClickListener(this);
+
+//                fm = getSupportFragmentManager();
+//                ft = fm.beginTransaction();
+//                weapon_fragment = new weaponFragment();
+//                //ft.add(R.id.weaponFragmentImg, weapon_fragment);
+//                ft.hide(weapon_fragment);
+////                ft.commit();
+
                 enemy1_image = findViewById(R.id.enemy_pos_1);
                 enemy1_image.setOnClickListener(this);
                 enemy2_image = findViewById(R.id.enemy_pos_2);
@@ -502,6 +523,24 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 heroAttack(enemy4, enemy4_image, enemy4_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
+                break;
+            case R.id.attackChoiceButton :
+                fragment = new weaponFragment();
+                fm = getSupportFragmentManager();
+                ft = fm.beginTransaction();
+                ft.replace(R.id.weaponFragmentImg,fragment);
+                ft.commit();
+                weapon_choice_cancel.setClickable(true);
+                weapon_choice_cancel.setVisibility(View.VISIBLE);
+                break;
+            case R.id.attackChoiceButtonCancel:
+                fragment = new BlankFragment();
+                fm = getSupportFragmentManager();
+                ft = fm.beginTransaction();
+                ft.replace(R.id.weaponFragmentImg,fragment);
+                ft.commit();
+                weapon_choice_cancel.setClickable(false);
+                weapon_choice_cancel.setVisibility(View.INVISIBLE);
                 break;
             default:
                 break;

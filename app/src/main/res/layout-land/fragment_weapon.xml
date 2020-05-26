@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@drawable/wooden_hanging_board"
+        android:layout_height="match_parent"
+             tools:context=".weaponFragment">
+
+    <Button
+            android:soundEffectsEnabled="false"
+            android:id="@+id/swordChoiceButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/weapon_inventory_fight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintVertical_bias="0.774"/>
+    <Button
+            android:soundEffectsEnabled="false"
+            android:id="@+id/spearChoiceButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/spear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.366"
+            app:layout_constraintVertical_bias="0.774"/>
+    <Button
+            android:soundEffectsEnabled="false"
+            android:id="@+id/crushingChoiceButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/inventory_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintVertical_bias="0.774"/>
+    <Button
+            android:soundEffectsEnabled="false"
+            android:id="@+id/rifleChoiceButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/inventory_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.897"
+            app:layout_constraintVertical_bias="0.774"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

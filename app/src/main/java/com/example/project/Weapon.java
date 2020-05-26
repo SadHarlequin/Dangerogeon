@@ -11,20 +11,20 @@ public class Weapon {
     boolean prepare_to_shoot=true;
     int weight;
 
-    void set_name(String n){
+    void setName(String n){
         this.weapon_name=n;
     }
-    void set_weight(int n){
+    void setWeight(int n){
         this.weight=n;
     }
-    void set_damage_type(String n){
+    void setDamageType(String n){
         this.damage_type1=n;
         if (this.damage_type1=="Range"){ this.range=4;
             this.prepare_to_shoot=false;
         }
         if (this.damage_type1=="Pierce") this.range=3;
     }
-    void set_damage_type(String n1, String n2){
+    void setDamageType(String n1, String n2){
         this.damage_type1=n1;
         this.damage_type2=n2;
         if (this.damage_type1=="Range" || this.damage_type2=="Range"){ this.range=4;
@@ -32,7 +32,7 @@ public class Weapon {
         }
         if (this.damage_type1=="Pierce" || this.damage_type2=="Pierce") this.range=3;
     }
-    void set_base_damage(int n){
+    void setBaseDamage(int n){
         this.base_damage=n;
     }
     void print_info(){
@@ -42,7 +42,7 @@ public class Weapon {
         }
         else System.out.printf(this.weapon_name + " " + this.damage_type1 + " " + this.current_durability);
     }
-    void set_max_durability(int n){
+    void setMaxDurability(int n){
         this.max_durability=n;
         this.current_durability=n;
     }

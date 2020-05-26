@@ -8,16 +8,16 @@ public class Armor {
     int current_durability;
     String cell;
 
-    void set_name(String n){
+    void setName(String n){
         this.armor_name=n;
     }
-    void set_weight(int n){
+    void setWeight(int n){
         this.weight=n;
     }
-    void set_material(String n){
+    void setMaterial(String n){
         this.material=n;
     }
-    void set_max_durable(int n){
+    void setMaxDurable(int n){
         this.max_durability=n;
         this.current_durability=n;
     }

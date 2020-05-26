@@ -87,7 +87,7 @@ public class Monster {
 
     String getInfo(){
         if (monsterHP<=0) return "";
-        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP+" HP\nAttack "+attack+"\n"+monsterSpeed;}
+        return monsterName+"\n"+monsterHP+"/"+monsterMaxHP+" HP\nAttack "+attack+"\nSpeed "+monsterSpeed;}
 
     void setHP(int n){
         this.monsterHP=n;
