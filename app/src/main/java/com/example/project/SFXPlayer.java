@@ -175,8 +175,7 @@ class SFXPlayer implements Serializable {
     }
 
     void stopMusic(){
-        if (mediaPlayer.isPlaying())
-            mediaPlayer.stop();
+        mediaPlayer.stop();
         mediaPlayer.release();
         log.log(Level.INFO, "Медиаплеер удален");
         handleThread.interrupt();

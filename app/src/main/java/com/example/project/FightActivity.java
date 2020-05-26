@@ -381,13 +381,38 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int) (Math.random() * 3);
             audioPlayer.play(roll == 0 ? audioPlayer.attack1ID :
                     (roll == 2 ? audioPlayer.attack2ID : audioPlayer.attack3ID));
-            //enemy_animation.stop();
-            enemy_image.setBackgroundResource(enemy.getMonsterAnimationHurt());
-            enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
-            enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
-            enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
-            enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
-            //enemy_animation.start();
+            Thread animationThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            enemy1_animation.stop();
+                            enemy2_animation.stop();
+                            enemy3_animation.stop();
+                            enemy4_animation.stop();
+                            hero_animation.stop();
+                            enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationHurt());
+                            enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationHurt());
+                            enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationHurt());
+                            enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationHurt());
+                            enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
+                            enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
+                            enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
+                            enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
+                        }
+                    });
+                    enemy1_animation.start();
+                    enemy2_animation.start();
+                    enemy3_animation.start();
+                    enemy4_animation.start();
+                    hero_animation.start();
+                }
+            });
+            animationThread.start();
+            animationThread.interrupt();
+
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
 //            enemy_image.setBackgroundResource(enemy.getMonsterAnimationWait());
