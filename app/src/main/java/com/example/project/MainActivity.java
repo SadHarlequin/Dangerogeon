@@ -26,11 +26,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vendButton.setOnClickListener(this);
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
+        Button musicButton = (Button) findViewById(R.id.button9);
+        musicButton.setOnClickListener(this);
     }
     @Override
     protected void onResume(){
         super.onResume();
         audioPlayer.startMusic(this, audioPlayer.main_themeID);
+    }
+
+    protected void onPause(){
+        super.onPause();
+        audioPlayer.pauseMusic();
     }
 
     {
@@ -295,6 +302,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent(this, VendorActivity.class);
                 //intent2.putExtra("sfx", audioPlayer);
                 startActivity(intent2);
+                break;
+            case R.id.button9:
+                audioPlayer.play(audioPlayer.click_buttonID);
+                if (audioPlayer.mediaPlayer.isPlaying()){
+                    audioPlayer.pauseMusic();
+                }else audioPlayer.startMusic(this,audioPlayer.main_themeID);
                 break;
             default:
                 break;

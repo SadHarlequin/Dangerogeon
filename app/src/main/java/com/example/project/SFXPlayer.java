@@ -14,7 +14,7 @@ import static android.media.MediaPlayer.create;
 
 class SFXPlayer implements Serializable {
     private SoundPool soundPool;
-    private MediaPlayer mediaPlayer;
+    protected MediaPlayer mediaPlayer;
     private Thread handleThread;
 
     int armorID = R.raw.armor,
@@ -167,6 +167,11 @@ class SFXPlayer implements Serializable {
         });
       thread.start();
       handleThread = thread;
+    }
+
+    void pauseMusic(){
+        mediaPlayer.pause();
+        log.log(Level.INFO, "Медиаплеер приостановлен");
     }
 
     void stopMusic(){
