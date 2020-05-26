@@ -11,8 +11,8 @@
     <Button
             android:id="@+id/button2"
             android:soundEffectsEnabled="false"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="134dp"
+            android:layout_height="131dp"
             android:background="@drawable/forgery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +28,7 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintVertical_bias="0.762"/>
+
     <Button
             android:id="@+id/button4"
             android:soundEffectsEnabled="false"
@@ -37,59 +38,56 @@
             android:background="@drawable/questgiver"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.088"
             app:layout_constraintVertical_bias="0.762"/>
-
     <Button
             android:id="@+id/vendorButton"
             android:soundEffectsEnabled="false"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="114dp"
+            android:layout_height="108dp"
             android:onClick="onClick"
             android:background="@drawable/tent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.12"
-            app:layout_constraintVertical_bias="0.212"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintVertical_bias="0.158"/>
 
     <Button
-        android:id="@+id/forestButton"
-        android:layout_width="186dp"
-        android:layout_height="81dp"
-        android:background="@drawable/free_space"
-        android:soundEffectsEnabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
-    <Button
-            android:id="@+id/button7"
+            android:id="@+id/forestButton"
+            android:layout_width="184dp"
+            android:layout_height="77dp"
+            android:background="@drawable/free_space"
             android:soundEffectsEnabled="false"
-            android:layout_width="109dp"
-            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.919"
+            app:layout_constraintVertical_bias="0.047"/>
+    <Button
+            android:id="@+id/cave_button"
+            android:soundEffectsEnabled="false"
+            android:layout_width="143dp"
+            android:layout_height="114dp"
             android:background="@drawable/cave_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.924"
-            app:layout_constraintVertical_bias="0.635"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.977"
+            app:layout_constraintVertical_bias="0.666"/>
     <Button
-            android:id="@+id/button8"
+            android:id="@+id/sea_button"
             android:soundEffectsEnabled="false"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Берег"
+            android:layout_width="245dp"
+            android:layout_height="82dp"
+
+            android:background="@drawable/free_space"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.684"
-            app:layout_constraintVertical_bias="0.935"/>
-
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.967"
+            app:layout_constraintVertical_bias="1.0"/>
     <Button
-            android:id="@+id/button9"
+            android:id="@+id/sound_button"
             android:soundEffectsEnabled="false"
-            android:layout_width="20dp"
-            android:layout_height="24dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/volume_on_settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"

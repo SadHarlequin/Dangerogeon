@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vendButton.setOnClickListener(this);
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
-        musicButton = (Button) findViewById(R.id.button9);
+        musicButton = (Button) findViewById(R.id.sound_button);
         musicButton.setOnClickListener(this);
     }
     @Override
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent(this, VendorActivity.class);
                 startActivity(intent2);
                 break;
-            case R.id.button9:
+            case R.id.sound_button:
                 audioPlayer.play(audioPlayer.click_buttonID);
                 if(audioPlayer.mediaPlayer!=null)
                     if (musicState){

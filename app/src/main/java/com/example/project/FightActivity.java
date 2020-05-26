@@ -277,6 +277,11 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                         enemyInfo2.setText(enemy2.getInfo());
                         enemyInfo3.setText(enemy3.getInfo());
                         enemyInfo4.setText(enemy4.getInfo());
+                        queue1.setImageResource(queue_pos_1.getMonsterView());
+                        queue2.setImageResource(queue_pos_2.getMonsterView());
+                        queue3.setImageResource(queue_pos_3.getMonsterView());
+                        queue4.setImageResource(queue_pos_4.getMonsterView());
+                        queue5.setImageResource(queue_pos_5.getMonsterView());
                         if (enemy1.getMonsterHP() <= 0 & enemy2.getMonsterHP() <= 0 & enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() <= 0) {
                             nextRoom.setClickable(true);
                             nextRoom.setVisibility(View.VISIBLE);
@@ -381,43 +386,57 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int) (Math.random() * 3);
             audioPlayer.play(roll == 0 ? audioPlayer.attack1ID :
                     (roll == 2 ? audioPlayer.attack2ID : audioPlayer.attack3ID));
-            Thread animationThread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            enemy1_animation.stop();
-                            enemy2_animation.stop();
-                            enemy3_animation.stop();
-                            enemy4_animation.stop();
-                            hero_animation.stop();
-                            enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationHurt());
-                            enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationHurt());
-                            enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationHurt());
-                            enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationHurt());
-                            enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
-                            enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
-                            enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
-                            enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
-                        }
-                    });
-                    enemy1_animation.start();
-                    enemy2_animation.start();
-                    enemy3_animation.start();
-                    enemy4_animation.start();
-                    hero_animation.start();
-                }
-            });
-            animationThread.start();
-            animationThread.interrupt();
+//            Thread animationThread = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            enemy1_animation.stop();
+//                            enemy2_animation.stop();
+//                            enemy3_animation.stop();
+//                            enemy4_animation.stop();
+//                            hero_animation.stop();
+//                        enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationHurt());
+//                        enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationHurt());
+//                        enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationHurt());
+//                        enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationHurt());
+//                        enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
+//                        enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
+//                        enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
+//                        enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
+//                            enemy1_animation.start();
+//                            enemy2_animation.start();
+//                            enemy3_animation.start();
+//                            enemy4_animation.start();
+//                            hero_animation.start();
+//
+//
+//                            enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
+//                            enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
+//                            enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
+//                            enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
+//                            enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
+//                            enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
+//                            enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
+//                            enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
+//                            enemy1_animation.start();
+//                            enemy2_animation.start();
+//                            enemy3_animation.start();
+//                            enemy4_animation.start();
+//                            hero_animation.start();
+//                        }
+//                    });
+//
+//                }
+//            });
+//            animationThread.start();
+//            animationThread.interrupt();
 
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
-//            enemy_image.setBackgroundResource(enemy.getMonsterAnimationWait());
-//            enemy_animation= (AnimationDrawable) enemy_image.getBackground();
-//            enemy_animation.start();
+
             queueSwap();
             enemyDeath();
 
