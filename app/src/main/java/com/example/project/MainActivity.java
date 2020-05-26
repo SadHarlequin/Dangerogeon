@@ -12,14 +12,14 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SFXPlayer audioPlayer = new SFXPlayer();
-    //audioPlayer.setContext(this);
-    Button musicButton;
+    private Button musicButton;
+    static boolean musicState = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        audioPlayer.startMusic(this, audioPlayer.main_themeID);
+        if(musicState) audioPlayer.startMusic(this, audioPlayer.main_themeID);
         audioPlayer.loadSounds(this);
         super.onCreate(savedInstanceState);
-        //SFXPlayer.play(SFXPlayer.coinID,1,1,1);
         setContentView(R.layout.activity_main);
         Button forestButton = (Button) findViewById(R.id.forestButton);
         forestButton.setOnClickListener(this);
@@ -33,13 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume(){
         super.onResume();
-        audioPlayer.startMusic(this, audioPlayer.main_themeID);
+        //audioPlayer.startMusic(this, audioPlayer.main_themeID);
     }
 
-    protected void onPause(){
-        super.onPause();
-        audioPlayer.pauseMusic();
-    }
+
 
     {
         Weapon saber = new Weapon();
@@ -290,29 +287,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         audioPlayer.play(audioPlayer.click_buttonID);
         switch (view.getId()) {
             case R.id.forestButton:
-                audioPlayer.stopMusic();
-                //audioPlayer.pause(audioPlayer.coinID);
+                if(musicState) audioPlayer.stopMusic();
                 Intent intent1 = new Intent(this, PrepareActivity.class);
-                //intent1.putExtra("sfx", audioPlayer);
-                audioPlayer.startMusic(this, audioPlayer.forest_themeID);
                 startActivity(intent1);
                 break;
             case R.id.vendorButton:
-                audioPlayer.stopMusic();
-                //audioPlayer.pause(audioPlayer.coinID);
+                if(musicState) audioPlayer.stopMusic();
                 Intent intent2 = new Intent(this, VendorActivity.class);
-                //intent2.putExtra("sfx", audioPlayer);
                 startActivity(intent2);
                 break;
             case R.id.button9:
                 audioPlayer.play(audioPlayer.click_buttonID);
-                if (audioPlayer.mediaPlayer.isPlaying()){
-                    audioPlayer.pauseMusic();
-                    musicButton.setBackgroundResource(R.drawable.volume_off_settings);
-                }else {
-                    audioPlayer.startMusic(this,audioPlayer.main_themeID);
-                    musicButton.setBackgroundResource(R.drawable.volume_on_settings);
-                }
+                if(audioPlayer.mediaPlayer!=null)
+                    if (musicState){
+                        audioPlayer.stopMusic();
+                        musicButton.setBackgroundResource(R.drawable.volume_off_settings);
+                        musicState = false;
+                    }else {
+                        audioPlayer.startMusic(this,audioPlayer.main_themeID);
+                        musicButton.setBackgroundResource(R.drawable.volume_on_settings);
+                        musicState=true;
+                    }
                 break;
             default:
                 break;

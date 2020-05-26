@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.project.MainActivity.audioPlayer;
+import static com.example.project.MainActivity.musicState;
 import static java.lang.Math.random;
 
 public class PrepareActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,6 +22,8 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        audioPlayer.loadSounds(this);
+        if(musicState)audioPlayer.startMusic(this, audioPlayer.forest_themeID);
         setContentView(R.layout.activity_prepare);
         Button backToMenuButton = (Button) findViewById(R.id.BackButtonPrepare);
         backToMenuButton.setOnClickListener(this);
@@ -42,7 +45,6 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
                 intentStart.putExtra("numOfRooms",numOfRooms);
                 intentStart.putExtra("heroHP", hero.getMonsterHP());
                 intentStart.putExtra("heroSpeed", hero.getMonsterSpeed());
-                //intentStart.putExtra("sfx", audioPlayer);
                 startActivity(intentStart);
                 break;
             default:

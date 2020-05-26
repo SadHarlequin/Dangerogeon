@@ -48,44 +48,7 @@ class SFXPlayer implements Serializable {
         soundpoolBuilder.setMaxStreams(20);
 
         soundPool = soundpoolBuilder.build();
-        /*streamThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
 
-            armorID = soundPool.load(context,R.raw.armor,1);
-            attack1ID = soundPool.load(context,R.raw.attack1,1);
-            attack2ID = soundPool.load(context,R.raw.attack2,1);
-            attack3ID = soundPool.load(context,R.raw.attack3,1);
-            click_buttonID = soundPool.load(context,R.raw.click_button,1);
-            coinID = soundPool.load(context,R.raw.coin,1);
-            goblin_attack1ID = soundPool.load(context,R.raw.goblin_attack1,1);
-            goblin_attack2ID = soundPool.load(context,R.raw.goblin_attack2,1);
-            goblin_death_rattle1ID = soundPool.load(context,R.raw.goblin_death_rattle1,1);
-            goblin_death_rattle2ID = soundPool.load(context,R.raw.goblin_death_rattle2,1);
-            goblin_hitID = soundPool.load(context,R.raw.goblin_hit,1);
-        //main_themeID = soundPool.load(context,R.raw.main_theme,1);
-            open_chestID = soundPool.load(context,R.raw.open_chest,1);
-            open_inventoryID = soundPool.load(context,R.raw.open_inventory,1);
-            weaponID = soundPool.load(context,R.raw.weapon,1);
-
-            }
-        });
-        streamThread.start();
-        /*armorID = soundPool.load(context,R.raw.armor,1);
-        attack1ID = soundPool.load(context,R.raw.attack1,1);
-        attack2ID = soundPool.load(context,R.raw.attack2,1);
-        attack3ID = soundPool.load(context,R.raw.attack3,1);
-        click_buttonID = soundPool.load(context,R.raw.click_button,1);
-        coinID = soundPool.load(context,R.raw.coin,1);
-        goblin_attack1ID = soundPool.load(context,R.raw.goblin_attack1,1);
-        goblin_attack2ID = soundPool.load(context,R.raw.goblin_attack2,1);
-        goblin_death_rattle1ID = soundPool.load(context,R.raw.goblin_death_rattle1,1);
-        goblin_death_rattle2ID = soundPool.load(context,R.raw.goblin_death_rattle2,1);
-        goblin_hitID = soundPool.load(context,R.raw.goblin_hit,1);
-        //main_themeID = soundPool.load(context,R.raw.main_theme,1);
-        open_chestID = soundPool.load(context,R.raw.open_chest,1);
-        open_inventoryID = soundPool.load(context,R.raw.open_inventory,1);
-        weaponID = soundPool.load(context,R.raw.weapon,1);*/
 
     }
 
@@ -115,10 +78,6 @@ class SFXPlayer implements Serializable {
                 goblin_hitID = soundPool.load(context,R.raw.goblin_hit,1);
                         log.log(Level.INFO,"  загружен goblin_hitID и все объекты");
 
-                //main_themeID = soundPool.load(context,R.raw.main_theme,1);
-                //open_chestID = soundPool.load(context,R.raw.open_chest,1);
-                //open_inventoryID = soundPool.load(context,R.raw.open_inventory,1);
-                //weaponID = soundPool.load(context,R.raw.weapon,1);
             }
             //    });
                 /*soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
@@ -131,7 +90,6 @@ class SFXPlayer implements Serializable {
        //     }
        });
        streamThread.start();
-       //streamThread = null;
        streamThread.interrupt();
 
     }
@@ -170,16 +128,21 @@ class SFXPlayer implements Serializable {
     }
 
     void pauseMusic(){
-        mediaPlayer.pause();
-        log.log(Level.INFO, "Медиаплеер приостановлен");
+        if(mediaPlayer!=null)
+            if(mediaPlayer.isPlaying())
+                mediaPlayer.pause();
     }
 
     void stopMusic(){
-        if (mediaPlayer.isPlaying())
+        try{
             mediaPlayer.stop();
-        mediaPlayer.release();
+        }catch(IllegalStateException ignored){
+
+        }
+        if(mediaPlayer != null)
+            mediaPlayer.release();
         log.log(Level.INFO, "Медиаплеер удален");
-        handleThread.interrupt();
+        if(handleThread!=null) handleThread.interrupt();
     }
 
 }
