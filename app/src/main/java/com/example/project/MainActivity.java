@@ -13,6 +13,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SFXPlayer audioPlayer = new SFXPlayer();
     //audioPlayer.setContext(this);
+    Button musicButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         audioPlayer.startMusic(this, audioPlayer.main_themeID);
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vendButton.setOnClickListener(this);
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
-        Button musicButton = (Button) findViewById(R.id.button9);
+        musicButton = (Button) findViewById(R.id.button9);
         musicButton.setOnClickListener(this);
     }
     @Override
@@ -307,7 +308,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 audioPlayer.play(audioPlayer.click_buttonID);
                 if (audioPlayer.mediaPlayer.isPlaying()){
                     audioPlayer.pauseMusic();
-                }else audioPlayer.startMusic(this,audioPlayer.main_themeID);
+                    musicButton.setBackgroundResource(R.drawable.volume_off_settings);
+                }else {
+                    audioPlayer.startMusic(this,audioPlayer.main_themeID);
+                    musicButton.setBackgroundResource(R.drawable.volume_on_settings);
+                }
                 break;
             default:
                 break;

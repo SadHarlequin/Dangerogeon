@@ -18,4 +18,6 @@
           android:duration="150" />
     <item android:drawable="@drawable/goblin_02_wait_00"
           android:duration="150" />
+
+
 </animation-list>
