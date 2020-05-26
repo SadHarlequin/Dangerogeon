@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Dangerogeon.iml" filepath="$PROJECT_DIR$/Dangerogeon.iml" group="Dangerogeon" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA_PROJECT-Dangerogeon.iml" filepath="$PROJECT_DIR$/JAVA_PROJECT-Dangerogeon.iml" group="Dangerogeon" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Dangerogeon/app" />
       <module fileurl="file://$PROJECT_DIR$/app-6.2.1-Dangerogeon.iml" filepath="$PROJECT_DIR$/app-6.2.1-Dangerogeon.iml" group="Dangerogeon" />
     </modules>
