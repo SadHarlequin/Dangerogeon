@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:background="@drawable/wooden_hanging_board"
+        android:background="@drawable/wooden_sign_fragment1"
         android:layout_height="match_parent"
              tools:context=".weaponFragment">
 
@@ -16,13 +16,13 @@
             android:background="@drawable/weapon_inventory_fight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.128"
-            app:layout_constraintVertical_bias="0.774"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintVertical_bias="0.769"/>
     <Button
             android:soundEffectsEnabled="false"
             android:id="@+id/spearChoiceButton"
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@drawable/spear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
