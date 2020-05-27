@@ -290,11 +290,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(musicState) audioPlayer.stopMusic();
                 Intent intent1 = new Intent(this, PrepareActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             case R.id.vendorButton:
                 if(musicState) audioPlayer.stopMusic();
                 Intent intent2 = new Intent(this, VendorActivity.class);
                 startActivity(intent2);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             case R.id.sound_button:
 

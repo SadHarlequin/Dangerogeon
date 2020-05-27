@@ -23,6 +23,7 @@ public class StartScreen extends AppCompatActivity implements View.OnClickListen
         if (v.getId() == R.id.button_start) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
     }
 }

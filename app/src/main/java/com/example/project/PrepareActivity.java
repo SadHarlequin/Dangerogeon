@@ -38,6 +38,7 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.BackButtonPrepare:
                 Intent intentBack = new Intent(this, MainActivity.class);
                 startActivity(intentBack);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
 
             case R.id.startButton:
@@ -46,6 +47,7 @@ public class PrepareActivity extends AppCompatActivity implements View.OnClickLi
                 intentStart.putExtra("heroHP", hero.getMonsterHP());
                 intentStart.putExtra("heroSpeed", hero.getMonsterSpeed());
                 startActivity(intentStart);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             default:
                 break;

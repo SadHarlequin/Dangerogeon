@@ -435,7 +435,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     void heroDeath(Intent intent) {
         if (hero.getMonsterHP() <= 0){
             intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
-            startActivity(intent);}
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
+
     }
 
     void weaponType(){
@@ -466,6 +469,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                     fight_intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
 //                    fight_intent.putExtra("numOfRooms", numOfRooms);
                     startActivity(fight_intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 } else {
                     Intent fight_intent = new Intent(this, FightActivity.class);
                     fight_intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
@@ -474,6 +478,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                     fight_intent.putExtra("heroHP", hero.getMonsterHP());
                     fight_intent.putExtra("heroSpeed", hero.getMonsterSpeed());
                     startActivity(fight_intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
                 break;
             case R.id.enemy_pos_1:

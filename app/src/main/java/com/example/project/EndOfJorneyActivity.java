@@ -45,6 +45,7 @@ int resourcesCounter;
             case R.id.TownButton:
                 Intent intentBack = new Intent(this, MainActivity.class);
                 startActivity(intentBack);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
 
             default:
