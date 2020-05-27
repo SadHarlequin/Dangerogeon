@@ -209,12 +209,4 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.787"
             app:layout_constraintVertical_bias="0.283"/>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/list"
-        android:name="com.example.project.InventoryFragment"
-        android:layout_width="240dp"
-        android:layout_height="120dp"
-        android:layout_weight="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wooden_board_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

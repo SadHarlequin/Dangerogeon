@@ -21,6 +21,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     int numOfRooms;
     int monsterChoice;
     int roomChoice;
+    String weaponChoiceType = "sword";
     ImageButton weapon_choice;
     ImageButton weapon_choice_cancel;
     FragmentTransaction ft;
@@ -66,8 +67,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     AnimationDrawable enemy4_animation;
     //попытка в приостановку времени
     Handler handler;
-    //Intent in_intent =  getIntent();
-    //SFXPlayer audioPlayer =(SFXPlayer)in_intent.getSerializableExtra("sfx");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,13 +95,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 weapon_choice.setOnClickListener(this);
                 weapon_choice_cancel = findViewById(R.id.attackChoiceButtonCancel);
                 weapon_choice_cancel.setOnClickListener(this);
-
-//                fm = getSupportFragmentManager();
-//                ft = fm.beginTransaction();
-//                weapon_fragment = new weaponFragment();
-//                //ft.add(R.id.weaponFragmentImg, weapon_fragment);
-//                ft.hide(weapon_fragment);
-////                ft.commit();
 
                 enemy1_image = findViewById(R.id.enemy_pos_1);
                 enemy1_image.setOnClickListener(this);
@@ -145,7 +138,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 enemy3_animation.start();
                 enemy4_animation.start();
                 enemyAttack();
-
+                weaponType();
                 break;
             case 2:
                 setContentView(R.layout.treasure_activity);
@@ -378,10 +371,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                         queue5.setImageResource(queue_pos_5.getMonsterView());
                     }
                 });
-                //queue2.setImageResource(queue_pos_2.getMonsterView());
-                //queue3.setImageResource(queue_pos_3.getMonsterView());
-                //queue4.setImageResource(queue_pos_4.getMonsterView());
-                //queue5.setImageResource(queue_pos_5.getMonsterView());
             }
         });
         stream.start();
@@ -408,53 +397,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             int roll = (int) (Math.random() * 3);
             audioPlayer.play(roll == 0 ? audioPlayer.attack1ID :
                     (roll == 2 ? audioPlayer.attack2ID : audioPlayer.attack3ID));
-//            Thread animationThread = new Thread(new Runnable() {
-//                @Override
-//                public void run() {
 //
-//                    runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            enemy1_animation.stop();
-//                            enemy2_animation.stop();
-//                            enemy3_animation.stop();
-//                            enemy4_animation.stop();
-//                            hero_animation.stop();
-//                        enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationHurt());
-//                        enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationHurt());
-//                        enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationHurt());
-//                        enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationHurt());
-//                        enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
-//                        enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
-//                        enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
-//                        enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
-//                            enemy1_animation.start();
-//                            enemy2_animation.start();
-//                            enemy3_animation.start();
-//                            enemy4_animation.start();
-//                            hero_animation.start();
-//
-//
-//                            enemy1_image.setBackgroundResource(enemy1.getMonsterAnimationWait());
-//                            enemy2_image.setBackgroundResource(enemy2.getMonsterAnimationWait());
-//                            enemy3_image.setBackgroundResource(enemy3.getMonsterAnimationWait());
-//                            enemy4_image.setBackgroundResource(enemy4.getMonsterAnimationWait());
-//                            enemy1_animation = (AnimationDrawable) enemy1_image.getBackground();
-//                            enemy2_animation = (AnimationDrawable) enemy2_image.getBackground();
-//                            enemy3_animation = (AnimationDrawable) enemy3_image.getBackground();
-//                            enemy4_animation = (AnimationDrawable) enemy4_image.getBackground();
-//                            enemy1_animation.start();
-//                            enemy2_animation.start();
-//                            enemy3_animation.start();
-//                            enemy4_animation.start();
-//                            hero_animation.start();
-//                        }
-//                    });
-//
-//                }
-//            });
-//            animationThread.start();
-//            animationThread.interrupt();
 
             enemy.getDamage(hero.getAttack());
             audioPlayer.play(audioPlayer.goblin_hitID);
@@ -486,6 +429,21 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
     }
 
+    void weaponType(){
+        if (weaponChoiceType.equals("sword")){
+            enemy3_image.setClickable(false);
+            enemy4_image.setClickable(false);
+        }
+        if (weaponChoiceType.equals("spear")){
+            enemy4_image.setClickable(false);
+        }
+        if (enemy1.getMonsterHP() <= 0 & enemy2.getMonsterHP() <= 0 & enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() <= 0) {
+            enemy2_image.setClickable(true);
+            enemy3_image.setClickable(true);
+            enemy4_image.setClickable(true);
+            enemy1_image.setClickable(true);
+        }
+    }
 
     @Override
     public void onClick(View v) {
@@ -506,21 +464,25 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.enemy_pos_1:
+                weaponType();
                 heroAttack(enemy1, enemy1_image, enemy1_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_2:
+                weaponType();
                 heroAttack(enemy2, enemy2_image, enemy2_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_3:
+                weaponType();
                 heroAttack(enemy3, enemy3_image, enemy3_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
                 break;
             case R.id.enemy_pos_4:
+                weaponType();
                 heroAttack(enemy4, enemy4_image, enemy4_animation);
                 enemyAttack();
                 heroDeath(heroDeathIntent);
@@ -542,16 +504,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 ft.commit();
                 weapon_choice_cancel.setClickable(false);
                 weapon_choice_cancel.setVisibility(View.INVISIBLE);
+//                weaponChoiceType = getIntent().getStringExtra("weapon_choice");
                 break;
             case R.id.inventory:
-                //InventoryFragment fragment = new InventoryFragment();
-                //FragmentManager fragmentManager = getSupportFragmentManager();
-                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                //fragmentTransaction.add(R.id.list,fragment,null);
-                //fragmentTransaction.hide(fragment);
-                //fragmentTransaction.commit();
-
-
+                break;
             default:
                 break;
         }

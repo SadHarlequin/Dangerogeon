@@ -14,8 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af63294-c6b8-4eb0-80c5-e105f3ea42ab" name="Default Changelist" comment="V. 1.1.1">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/wooden_sign_fragment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/wooden_sign_fragment1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,6 +25,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/FightActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/project/weaponFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/project/weaponFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fight_area.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_weapon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_weapon.xml" afterDir="false" />
     </list>
@@ -78,9 +79,6 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.project" />
     </key>
@@ -89,6 +87,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GITRepos\Dangerogeon\app\src\main\res\raw" />
+      <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\AppData\Local\gitkraken\app-6.2.1\Dangerogeon\app\src\main\res\drawable-v24" />
     </key>
   </component>
@@ -171,37 +172,37 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="349" y="173" key="#app/0.0.1280.984@0.0.1280.984" timestamp="1590420563776" />
-    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1590512012362">
+    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1590563738388">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1590512012362" />
+    <state x="445" y="201" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1590563738388" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590516619662">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.984@0.0.1280.984" timestamp="1590516619662" />
-    <state width="1237" height="259" key="GridCell.Tab.0.bottom" timestamp="1590519112760">
+    <state width="1237" height="259" key="GridCell.Tab.0.bottom" timestamp="1590562883976">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590519112760" />
-    <state width="1237" height="259" key="GridCell.Tab.0.center" timestamp="1590519112760">
+    <state width="1237" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590562883976" />
+    <state width="1237" height="259" key="GridCell.Tab.0.center" timestamp="1590562883976">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590519112760" />
-    <state width="1237" height="259" key="GridCell.Tab.0.left" timestamp="1590519112760">
+    <state width="1237" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590562883976" />
+    <state width="1237" height="259" key="GridCell.Tab.0.left" timestamp="1590562883976">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590519112760" />
-    <state width="1237" height="259" key="GridCell.Tab.0.right" timestamp="1590519112760">
+    <state width="1237" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590562883976" />
+    <state width="1237" height="259" key="GridCell.Tab.0.right" timestamp="1590562883976">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590519112760" />
+    <state width="1237" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590562883976" />
     <state x="220" y="238" key="IDE.errors.dialog" timestamp="1588955896246">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="220" y="238" key="IDE.errors.dialog/0.0.1280.984@0.0.1280.984" timestamp="1588955896246" />
-    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590491134521">
+    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590522157371">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1590491134521" />
+    <state x="449" y="409" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1590522157371" />
   </component>
 </project>
