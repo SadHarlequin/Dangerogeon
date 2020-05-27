@@ -21,6 +21,8 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
     int numOfRooms;
     int monsterChoice;
     int roomChoice;
+    int enemyDeathsCounter;
+    int resourcesCounter;
     String weaponChoiceType = "sword";
     ImageButton weapon_choice;
     ImageButton weapon_choice_cancel;
@@ -74,6 +76,8 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         handler = new Handler();
         numOfRooms = getIntent().getIntExtra("numOfRooms", 0) - 1;
         roomChoice = (int) (Math.random() * 2) + 1;
+        enemyDeathsCounter = getIntent().getIntExtra("enemyDeathsCounter", 0);
+//        resourcesCounter= getIntent().getIntExtra("resourcesCounter", 0);
         hero.setHP(getIntent().getIntExtra("heroHP", 0));
         hero.setMonsterSpeed(getIntent().getIntExtra("heroSpeed", 0));
         hero.setHeroMaxHp(200);
@@ -217,8 +221,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-
-
         audioPlayer.play((int) (Math.random() * 2) == 0 ? audioPlayer.goblin_death_rattle1ID
                 : audioPlayer.goblin_death_rattle2ID);
         Monster swap;
@@ -226,8 +228,10 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (enemy1.getMonsterHP() <= 0)
+                    if (enemy1.getMonsterHP() <= 0){
                         enemy1.MonsterDeathAnimation();
+                        enemyDeathsCounter=+1;
+                    }
                 }
             });
             swap = enemy1;
@@ -238,8 +242,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (enemy2.getMonsterHP() <= 0)
+                    if (enemy2.getMonsterHP() <= 0){
                         enemy2.MonsterDeathAnimation();
+                        enemyDeathsCounter=+1;}
                 }
             });
             //enemy2.MonsterDeathAnimation();
@@ -251,8 +256,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() != -9999)
+                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() != -9999){
                         enemy3.MonsterDeathAnimation();
+                        enemyDeathsCounter=+1;}
                 }
             });
             //enemy3.MonsterDeathAnimation();
@@ -264,8 +270,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() == -9999)
+                    if (enemy3.getMonsterHP() <= 0 & enemy4.getMonsterHP() == -9999){
                         enemy3.MonsterDeathAnimation();
+                        enemyDeathsCounter=+1;}
                 }
             });
             //enemy3.MonsterDeathAnimation();
@@ -274,8 +281,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (enemy4.getMonsterHP() <= 0 & enemy4.getMonsterHP() > -9999)
+                    if (enemy4.getMonsterHP() <= 0 & enemy4.getMonsterHP() > -9999){
                         enemy4.MonsterDeathAnimation();
+                        enemyDeathsCounter=+1;}
                 }
             });
             //enemy4.MonsterDeathAnimation();
@@ -425,8 +433,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     //смерть героя
     void heroDeath(Intent intent) {
-        if (hero.getMonsterHP() <= 0)
-            startActivity(intent);
+        if (hero.getMonsterHP() <= 0){
+            intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
+            startActivity(intent);}
     }
 
     void weaponType(){
@@ -447,16 +456,20 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent heroDeathIntent = new Intent(this, MainActivity.class);
+        Intent heroDeathIntent = new Intent(this, EndOfJorneyActivity.class);
         switch (v.getId()) {
             case R.id.next_room:
                 audioPlayer.play(audioPlayer.click_buttonID);
                 if (numOfRooms == 0) {
                     audioPlayer.stopMusic();
-                    Intent fight_intent = new Intent(this, MainActivity.class);
+                    Intent fight_intent = new Intent(this, EndOfJorneyActivity.class);
+                    fight_intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
+//                    fight_intent.putExtra("numOfRooms", numOfRooms);
                     startActivity(fight_intent);
                 } else {
                     Intent fight_intent = new Intent(this, FightActivity.class);
+                    fight_intent.putExtra("enemyDeathsCounter", enemyDeathsCounter);
+//                    fight_intent.putExtra("numOfRooms", numOfRooms);
                     fight_intent.putExtra("numOfRooms", numOfRooms);
                     fight_intent.putExtra("heroHP", hero.getMonsterHP());
                     fight_intent.putExtra("heroSpeed", hero.getMonsterSpeed());

@@ -24,6 +24,10 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+                android:name=".EndOfJorneyActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".FightActivity"
             android:label="@string/title_fight_area"
             android:screenOrientation="landscape"

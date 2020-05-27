@@ -101,6 +101,7 @@ public class Monster {
         setMonsterView(R.drawable.grave);
         setMonsterAnimationWait(R.drawable.grave_img);
         setAttack(0);
+
     }
 
     void MonsterAttackAnimation(){
